@@ -1,0 +1,5 @@
+# Academic Excellence
+
+Created: October 16, 2021 9:44 PM
+
+Apart from being a consistent name in the top 10 honors roll from elementary until senior high school, Carl was also a recipient of the Saludo sa Kabataan Academic Excellence Award 2020. His biggest highlight, however, and a still-resonating, still-inspiring academic feat involved representing the entire Philippines. Carl was Marigondon National Highschool's pioneering Lego EV3 programmer and team captain. During his freshman year, he learned the important value of perseverance as he cried from losing a run in the First Lego League at Hoops Dome. The following year, he was at the bottom of the rankings amongst all the schools in Lapu-Lapu city. In grade 9, however, he followed his gut and made the switch to the Robot Soccer Category. Carl and his team made it to the Nationals in Manila and made a name for MNHS in the Robot Soccer category. Finally, in his last year, he brought glory to the country by bearing the Philippine flag at the World Robotics Olympiad in Gyor, Hungary.
