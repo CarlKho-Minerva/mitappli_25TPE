@@ -1,0 +1,177 @@
+﻿Row,Category,Duration (in seconds),Narration/Audio,ScreenRec,Visual
+5.3,Demo,26,"With a voice-only interface, Fluent upskills verbal communication with the option to focus on debating, storytelling, question-asking, or explanation. The key here is frameworks for speaking.
+
+It’s even equipped with a natural sounding human voice.
+
+After your conversation, Fluent gives you feedback on where you can improve.",,VID IN FIGMA
+4.1,Demo,15,"First stop — Achievement Tracker
+
+Simply answer a few questions about your achievement — and then our AI transforms them into bullet points and descriptions ready to impress any scholarship committee.
+
+Not just any AI, X-Y-Z format people from Google recommend.",,VID IN FIGMA
+3—PERSONALIZATION,Demo,,,,
+1—STORY       (2 Mins),Story,,,,
+5.2,Demo,26,"Meet MathyYou, our AI-powered Math Tutor. By converting abstract math questions into interest-aligned scenarios, MathyYou makes studying for the math section in the SAT engaging.",,VID IN FIGMA
+2.2,Demo,9,I also use AI along with other APIs to automatically bring the information to them; where Filipinos are the most active — Facebook.,,VID IN FIGMA
+6.1,Business,14,"There are 23 million students in the Philippines. 
+
+And we're targeting over 10.3 million junior and senior high school students. This represents a substantial market actively seeking educational opportunities and financial aid for higher education.",,Table
+3.3,Demo,12,"But we don't stop there! 
+
+Gemini's embedding model also analyzes your profile for surprise # two.
+
+Padayon Ko matches you with  three scholarships to give you a headstart on your journey.",,VID IN FIGMA
+3.4,Demo,5.16,But what I’m really excited` for are the AI tools to help you supercharge your scholarship applications,,
+1.1,Story,10,"Why did Webflow, a start-up worth $4b put a kid from the island of Lapu-Lapu, Cebu on the tallest billboard in Times Square?",,Times Square
+4.2,Demo,30,"Second — Foundational Essays.
+
+Foundational is the word here. 
+
+This section introduces you to 10 common application questions you can write with AI.
+
+Again, UNO. 
+
+Padayon Ko’s AI will then become your personal editorial team.
+
+It gives your answers to an AI agent who is good at bringing out the technical details, then someone who is good at writing storyies,  then someone who knows your style of speaking so it won’t sound too robotic, so don’t worry.",,VID IN FIGMA
+2.1,Demo,10.2,"This is my working prototype.
+
+Padayon Ko now features a cleaner interface. 
+
+I can clearly see what the prize is and if I’m interested, I am greeted with friendlier language telling me how to claim it.",,VID IN FIGMA
+5—Practice,Demo,,,,
+,Demo,,,,
+3.2,Demo,20,"For first timers
+
+We have an onboarding process. It is available in English, Cebuano, and Tagalog
+
+This part also gathers your information. After which, we give users a surprise. 
+
+We give them their personal elevator pitch for networking, an introduction to the right person could go a long way!",,VID IN FIGMA
+4.3,Demo,18,"But what are they for?
+
+Meet Super Essays! 
+
+This is where Padayon Ko shines.
+
+Our AI looks at your foundational essays and achievements and merges them to generate new essays tailored to new application questions. 
+
+Copy paste - and focus on applying. (sped up)",,VID IN FIGMA
+4-TOOLS,Demo,,,,
+2—History+BackendUpgrade,Demo,,,,
+4.4 (spedup),Demo,26,"Pause. Breathe. 
+
+A few Quick notes: 
+
+1. You can either write or speak your input in any language. For example, Tagalog:
+
+8 secs
+
+Cebuano
+
+8 secs
+",,VID IN FIGMA
+5.1 (spedup),Demo,14.01,"Unfortunately, Filipino studying in publicly-funded schools don’t take the SATs by default. We even have to take English proficiency tests to be eligible for international scholarships.
+
+That is why we included practice bots in Padayon Ko.",,SAT IELTS “CROSS SIGN”
+,Story,,,,
+1.2,Story,12,"To answer that, let me tell you a story. Rewind to 2022. 
+
+I was a high school student. 
+I've been driven by a passion for research. 
+
+From science investigatory projects.",,"Ecotech, STEAM, Robotics Photo (bryner)
+
+Fade to BnW"
+1.3,Story,15,"I discovered international scholarships. 
+
+I was already working at a company building software, so I had the privilege to take the necessary exams.",,"SAT + IELTS = 20k
+
+Application one Canadian uni = 7k"
+1.5,Story,3,And I got a full-ride… almost! It was painful.,,UBC 1 + Zoom 2
+1.7,Story,8,"But navigating the application process was a nightmare. 
+
+The information was scattered, the requirements complex. ",,"Left half website + Annotation “Is this legit?”
+
+Right half 
+Requirements page
+”What’s an NSO Birth Cert and where is it? 
+”Oh, Typhoon Odette took it away”"
+1.6,Story,7,"I felt like a failure.
+
+My coping mechanism? I swore to apply to every scholarship possible. ",,Zoom 2
+1.8,Story,14,"So I made my own scholarship database. 
+
+Meet, Padayon Ko, a simple list of available scholarships for Filipinos with all the information in one spot.
+
+I turned it into an initiative, which my high school adapted. ",,Screen Rec
+1.9,Story,7,"One day, someone messaged my initiative and told me about a university.
+
+And I got accepted with a scholarship!",,Minerva letter
+1.10,Story,10,"but still, the first few words that came out of my dad's mouth was: 
+
+sorry, but we can't afford this.",,"Sorry, but we can’t afford this."
+1.11,Story,7,"Cue coping mechanism 
+
+So I made a website looking for sponsorships. 
+
+And the rest was history.",,Carl Website scroll through
+1.12,Story,5,"It’s kind of a slippery slope, but the reason I got to Times Square was because of a scholarship. Fill that in.",,Fill in the boxes
+1.14,Story,8,"The best? But it’s not just me, because of Padayon Ko, many students from my High School get to enjoy international scholarships too!",,Screen shots
+1.13,Story,13,"Because of that, it is with great pride for me to say
+
+Hello everyone, my name is Carl Kho. I major in computer science and minor in Neuropsychology at Minerva University, where I study in seven different countries.",,Video scroll through mu countries
+1.15,Story,12,"Today, I am presenting an upgraded Padayon Ko with AI because I want to multiply that impact for the 3.3 million Filipino students who stopped education because they couldn’t afford it.",,Photo filipino kids
+3.1,Demo,12,"To our professionals, do you want go to back to being students again?
+
+Walk you through Padayon ko’ features.
+
+Judges, here I show you feasibility, but wait until the end for Uniqueness of Ideas",,“Want to be students again?”
+4.1.5,Demo,18,"Let’s zoom out. Why are they important? 
+
+Have you played Uno the card game before? 
+
+You know how satisfying it is when a college asks “tell me about your leadership skills” and then boom “I’ve had that ready the whole time”. 
+
+Saving time and energy.",,"“Did you achieve anything in life?”
+
+UNO REVERSE"
+4.4.2,Demo,8,"
+Knowing how to start is difficult. That is why we emphasize turning simple question answers into narratives for you to experience less cognitive load.
+",,"“Story”
+- Charac
+- Plot
+
+SS of Achievement Tracker"
+4.4.3,Demo,8,"
+This is successfully achieved by using comprehensive AI prompts following Google’s prompting guidelines.",,
+6 — Business,Business,,,,
+6.2,Business,22,"We project a conservative 2% market penetration in Year 1, reaching 206,000 students. We anticipate increasing this to 5% in Year 2 (515,000 students) and 10% in Year 3 (1,030,000 students). 
+
+These projections are based on our targeted marketing efforts, strategic partnerships, and the growing demand for accessible scholarship information.”",,
+6.3,Business,,"We project a conservative 2% market penetration in Year 1, reaching 206,000 students. We anticipate increasing this to 5% in Year 2 (515,000 students) and 10% in Year 3 (1,030,000 students).
+
+These projections are based on our targeted marketing efforts, strategic partnerships, and the growing demand for accessible scholarship information.”",,
+6.4,Business,22,"For schools, we offer tiered subscriptions starting at ₱50,000/year for up to 500 students. With approximately 60,000 schools in the Philippines, capturing just 1% in Year 1 (600 schools) generates ₱30M ($540,000 USD). We aim to increase this to 2% and 3% in subsequent years, yielding ₱60M and ₱90M respectively.",,
+6.5,Business,9,"While harder to quantify initially, we are actively pursuing government partnerships, which we anticipate will contribute significantly to revenue in later years.",,
+6.6,Business,14,"Our primary costs include cloud computing, team salaries (marketing, database maintenance, development), content creation, and outreach expenses. We estimate total operating costs of ₱15M ($270,000 USD) in Year 1, scaling proportionally with user growth in subsequent years.",,
+6.7,Business,6,"Here’s a comprehensive view of our Lean Canvas, capturing the essence of Padayon Ko’s business model and strategy.",,
+6.8,Business,8,"Focusing on the problems faced by Filipino students, our solution simplifies the scholarship process, making opportunities accessible and achievable.",,
+6.9,Business,10,"With a unique understanding of local needs, our competitive advantage positions us as the first comprehensive platform tailored for high school students and educational institutions.",,
+6.10,Business,9,"Our operating costs are strategically planned, with a focus on essential areas like cloud computing and team development, ensuring sustainable growth.",,
+6.11,Business,9,"Our diverse revenue streams, from B2B subscriptions to a freemium model, pave the way for financial sustainability and long-term success.",,
+6.12,Business,10,"And remember, it’s not just financial success, but global impact. Who knows, the next nobel prize winner is just one scholarship away ",,
+,Business,,,,
+,Business,,To robotics,,
+,Business,,"and even the social sciences, which landed me on Google Scholar",,
+,Business,,However,,
+,Business,,opportunities and resources felt limited in the Philippines.,,
+"Applying set me back 20k and apply for colleges, which cost 7k just to even get a shot of being accepted.",Business,,,,
+"And I got a full-ride scholarship… ",Business,,,,
+"almost! It was painful.
+
+I felt like a failure. My coping mechanism? I swore to apply to every scholarship possible.",Business,,,,
+But navigating the application process was a nightmare.,Business,,,,
+"The information was scattered, ",Business,,,,
+"One day, someone messaged my initiative and told me about a university.",Business,,,,
+the requirements complex.,Business,,,,

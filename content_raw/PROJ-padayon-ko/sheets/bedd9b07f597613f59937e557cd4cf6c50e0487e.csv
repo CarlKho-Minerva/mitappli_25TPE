@@ -1,0 +1,142 @@
+﻿Name,Date,Priority,Status,Tags,buildTag
+Proposal to Pido/Don Mendoza,"July 11, 2024",,Not started,,
+Laying out ideas | Backend,"July 12, 2024",,Not started,,
+Google Cloud Essentials learning,"July 12, 2024",,Not started,,
+n&w s5 — entry,"July 13, 2024",,Not started,,
+"twitter engagement ","July 13, 2024",,Not started,,
+sys_msg for ai,"July 14, 2024 → July 15, 2024",,Not started,,
+GeminiAPI on ipynb,"July 15, 2024",,Not started,,
+Space for Recording,"July 15, 2024",,Not started,,
+Intro video for buildspace + whitebrick,"July 15, 2024",,Not started,,
+twt post for padayon ko,"July 15, 2024",,Not started,,
+,"July 15, 2024",,Not started,,
+[twt] sys_msg/SEXI Debate Method,"July 16, 2024",,Not started,,
+flutterflow exploration,"July 16, 2024",,Not started,,
+Toy Reveal,"July 19, 2024",,Discontinued,,loom
+Essay Rewrite + Dockerfile,"July 16, 2024",,Not started,dev,
+Firebase setup (isolation) — User input DB and stuff,"July 23, 2024",,Not started,dev,
+College Essay Rewrite (Optimize),"July 22, 2024",,Not started,prompt,
+rest,"July 17, 2024",,Not started,,
+Week 2 Update,"July 19, 2024",,Not started,,
+Toy Notion → App Sheet,"July 18, 2024",,Not started,dev,
+Whisper → Elevator pitch PK,"July 18, 2024",,Not started,"non-tech, video_entry",
+Visual Inspo,"July 18, 2024",,Not started,design,
+Scholarship Cards (layout),"July 19, 2024",P1,Done,dev,repo
+newDB_item → thumbnail gen → Facebook Post,,P1,Discontinued,,api
+GA4 (Google Analytics),,P4,Done,,misc
+onboarding form → chroma DB,,P3,Discontinued,,api
+Achievement Tracker (backend),,P1,Done,,misc
+Agentic Handling of Prompts,"July 20, 2024",,Not started,,
+Notion template UX study,"July 21, 2024",,Not started,,
+Branding,,P3,Discontinued,,misc
+Canva API - Autofill Thumbnails,,P3,Discontinued,,misc
+Refactor notion,"July 21, 2024",,Not started,non-tech,
+GCP Architecture for GC SG 🇸🇬,,,Discontinued,,repo
+Speech to Text (Cebuano),,P1,Done,,repo
+Cebuano Text to Speech Rationale,"July 22, 2024",,Not started,research,
+Installing GCloud SDK,"July 22, 2024",,Not started,,
+Achievement Tracker (frontend),"July 23, 2024",P1,Done,dev,AI
+Foundational Essays (research),,P1,Done,,repo
+Scholarship Application — Timeline (USA),"July 23, 2024",,Not started,research,
+Foundational Essays (backend),,P1,Done,,repo
+AI Agents — Order,"July 23, 2024",,Not started,,
+Origin Story (research),"July 24, 2024",P1,Done,research,misc
+Fluent (Frontend),"July 27, 2024",P1,Done,,AI
+Redeploy the cloud run and save a markdown file for reference (Specfic to each isolated),,P2,Done,,misc
+Query Minerva db and convert to notion card,,P1,Discontinued,,repo
+Foundational Essays (frontend),,P1,Done,,repo
+Origin Story (fe&be),,P1,Done,,repo
+select foundational essay/achievement,,P2,Discontinued,,repo
+func() validate entry for all ai functions,,P2,Discontinued,,repo
+rest,"July 25, 2024",,Not started,,
+learn about Vertex AI,"July 24, 2024",,Not started,,
+Mathy (Frontend),"July 27, 2024",P1,Done,,AI
+Code Execution (Wolfram Alternative),,Content,Not started,,repo
+Function Calling,,Content,Not started,,repo
+Attempted to Code Execution ↔ Function Calling,"July 28, 2024",,Not started,,
+Organize Prompts in Vertex AI,,P2,Discontinued,,repo
+Aggregate all code to one http://main.py and separate flask backend,,P1,Discontinued,,repo
+Notion API as backend for editors (easy accessibility),,P1,Discontinued,,repo
+Single UI,,P2,Discontinued,,repo
+http://Name.org free GitHub for site name (notion pages?),,P2,Discontinued,,repo
+Onboarding Flow,"August 6, 2024",P1,Discontinued,non-tech,misc
+MathyCo Backend!,"July 28, 2024",P1,Done,,AI
+Technical Process — Video of Iteration 1 for Don Mendoza/Pido,"July 29, 2024",P1,Done,non-tech,loom
+Existing Essay Writer (Notion API + Gemini),"August 3, 2024 → August 4, 2024",P1,Done,dev,AI
+Foundational Achievements,,P1,Discontinued,,repo
+Bullet Achievements — Comprehensive Prompts,"July 30, 2024",,Done,prompt,loom
+Foundational Essays — Comprehensive Prompts,"July 30, 2024",,Not started,,
+Origin Story — Comprehensive Prompts,"July 30, 2024",,Not started,,
+Flask — Blueprint() Organization,"July 31, 2024",P3,Done,dev,backend
+Notion API — Intro to Integrations,"July 31, 2024",P1,Done,dev,backend
+Origin Story Modified,,P1,Discontinued,,repo
+User-Facing Notion Page (no login),,P1,Discontinued,,repo
+List Six Foundational Achievements,,P4,Done,,repo
+Decide on a Dedicated Achievement Page,,P4,Done,,repo
+Create Full Screen (Focus Mode) Button,,P4,Done,,repo
+" Add Placeholder Entries for Achievements / Fill in the blanks",,P4,Done,,repo
+Create Script to Read Achievements,,P4,Done,,repo
+AV Script,"August 5, 2024",,Not started,video_entry,
+The Ideal UI,"August 5, 2024",,Not started,,
+Chilipepper Onboarding Form,"August 6, 2024",P1,Done,dev,misc
+Product Demo — Research,"August 7, 2024",,Not started,,
+Add Sample Achievements/Essays,"August 6, 2024",,Done,non-tech,
+Push Super Essay to Google Cloud Run,"August 6, 2024",,Not started,,
+,,,Done,,repo
+[BE] Add Speech to Text for all AI,,P1,Not started,,repo
+[BE] Add imageGen for Kabaw (Mathy),,P1,In progress,,repo
+Model Garden (Individual),,Content,Not started,,repo
+GCP For Students,,Content,Not started,,repo
+[N_UI]  Add Cebuano/Tagalog toggles (?),,P3,Not started,,repo
+"Chillypepper → Origin Story (detail agent) ","August 10, 2024",P1,In progress,dev,"AI, notion"
+Basics of Code Refactoring,,P1,In progress,,repo
+[BE] Notion → SlidesAPI (img) → FB,,P1,Discontinued,,repo
+"[IndivEx] 1 - User Flow ","August 8, 2024",P1,Done,,loom
+[IndivEx] 2 - Kanban Guided Exploration,,P1,Done,,repo
+[N_UI] Onboarding — Feature and Team Shapes!,,P2,Not started,,repo
+[N_UI] Make 2nd page for init task list in case users want to view again,,P3,Not started,,repo
+[IndivEx] 3 - Achievements Tracker,,P1,Done,,repo
+[IndivEx] 4 - Foundational Essays,,P1,Done,,repo
+[IndivEx] 5 - Kabaw (Math) Practice,,P1,Done,,repo
+[IndivEx] 6 - Kasturya (Eng) Practice,,P1,Done,,repo
+[IndivEx] 7 - Super Essay,,P1,Done,,repo
+[IndivEx] 8 - Scholarship Repo,,P1,Done,,repo
+[FE] Essays — Split essay title and content,,P1,Not started,,repo
+[IndivEx] Framework,,P1,Done,,repo
+[N_UI] Origin Story DB as col 1,,P1,Discontinued,,repo
+[IndivEx] 9 - Origin Story,,P1,Done,,repo
+[FE] add iFrames to Kabaw (Mathy),,P1,Not started,,repo
+add captions for kabaw (SAT)/Kasturya (Eng Proficiency)/Origin story,,P1,Not started,,repo
+[BE/FE] feedback_steps_ai_is_in code,,P1,Not started,,repo
+[N_UI] rebrand application tracker,,P4,Not started,,repo
+[N_UI] FB Comments should have the Tagalog and Visayan Version of the opportunity,,P1,Not started,,repo
+"[ALL - Indiv Ex] ","August 7, 2024",P1,Done,,repo
+Script by Gemini,"August 8, 2024 → August 9, 2024",P1,Done,,repo
+Gemini Judge,,P1,Done,,repo
+[N_UI] list scholarships,,P1,Not started,,repo
+[BE] Fluent —  feedback bot another agent that shows up below watercooler prompt (copy to clipboard),,P1,In progress,,repo
+[N_UI] Change Kabaw to MathyYou,,P2,Not started,,repo
+Shoot @ White Brick,"August 9, 2024",,Not started,,
+[N_UI] Public-Facing Page,,P1,Not started,,repo
+[N_UI] Modify Sidebar,"August 11, 2024",P1,Done,design,notion
+[N_UI] Add writeups for each feature,,P2,Not started,,repo
+Code post-wbrick,"August 10, 2024",,Not started,,
+chilipepper → first three recos toggle (manual or cloud sched),"August 10, 2024",P1,In progress,dev,repo
+[FE] Unify CSS style,,P1,Not started,,repo
+[BE] Improve watercooler prompts,,P1,Not started,,repo
+[BE] Matching | Cloud Function + Scheduler,,P1,Not started,,repo
+[VID] Complete Workflows for all (Claude?),,P1,Not started,,repo
+Visualize Taskflows,"August 11, 2024",,Not started,,
+Debug Print in webapp instead of video recording.,"August 11, 2024",,Not started,,
+[BE] Ntn → FB Improvements,"August 11, 2024",P1,In progress,dev,"AI, misc, notion"
+Screen Studio,,P1,In progress,,repo
+Format for Screen Recording,,P1,In progress,,repo
+SUBMITTED,"August 13, 2024",,Not started,,
+Updated Desc,"August 13, 2024",,Not started,non-tech,
+Called Pido,"August 13, 2024",,Not started,,
+Shot List for Longer Demo Video for Ahong/DonMendoza,"August 19, 2024",P1,Not started,video_entry,loom
+"Refactored Fluent, AchiTracker","September 8, 2024",,Not started,,
+Eunju Marketing,"September 8, 2024",,Not started,,
+Compose Message indiv reposting,"September 8, 2024",,Not started,,
+Red Bull Basement,"September 10, 2024",,Not started,,
+"Thank You Post | GCP AI4Impact ","December 26, 2024",,Not started,,

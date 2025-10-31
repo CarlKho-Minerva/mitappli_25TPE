@@ -1,0 +1,356 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": false,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1TWgeMUnHal6oF8i4ssM0ih_EInGl8BsS"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1zxPHDErlPfWp2gCdXoH-5OgRhUVIF_7-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nOLH1Hl1487LHLTKGngH6uwYL3Znv2dS"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Sfn-cyxkGAfCFaQlk32wkN7NpKccqgIz"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1WAi_CeO4WJdRZSFoW1HkOlq9DcIbrhW9"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1q9A3fRrn86PigaB91_NvHbX7VVzQJ4gc"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "132a0snMJYUWFBt3q2zTTGV91tiTeeBXM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Ai8b8WhgDIcX-Eu1UtGcKEjIIw9UM7VP"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1b_UVC4Ev9AsyjNXBFbKJxlJk5pgPYhfF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1AYh9sF-35PWia0IFygv19JTxjc7STzzk"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nFhdtg0kbBIUrH7KYpRNmLM7VlpSS4TI"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "18LukStmPNEfKM250VaWsJgH3RoGj6uyb"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Jr89D1mErOXy2zCsdegllpHYuEMqQEYe"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1MWwPE1QR-Fm3iGKHqvXZLHxg51e-fYeX"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1L1_LIrStPlEuH_g-yuNlV7OD_CZ4TvkG"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "12sTRSh9cVg-d3JNlAohjS4AP612_feE8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1hYppCC4VlaXbA0PLOy_tQ0Gv2xMWej-a"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "10e0Qmm6Poow7KBsR2Upf5sErGSPP6lvA"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "12buTUtWi9QKECEyolmXC-6YENydRMu54"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1r56VjI-DNO1fZ5CgmHFCqg_aWxGXtHti"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveDocument": {
+        "id": "1G7ZplSW419waCTh2duaPcRdfzLnHrGX6"
+      },
+      "role": "user",
+      "tokenCount": 180
+    }, {
+      "text": "**Continue Processing Screenshots**\n\nI\u0027m working on batch 4 of the Dell internship documentation, maintaining the same format and chronological flow from previous batches. The objective is to accurately represent the Teams screenshots, much like the prior entries. I\u0027m focusing on consistency in presentation for a complete record of the internship.\n\n\n**Analyze Internship Documentation**\n\nI\u0027ve initiated batch 4 of the Dell internship documentation, adhering to the established format and chronological flow. I\u0027m focusing on analyzing the first two screenshots, identifying the key actions, involved individuals, and any relevant files or links. My primary task is to extract pertinent information about a service issue and my troubleshooting steps, including deleting a namespace to resolve the problem.\n\n\n**Documenting the Interactions**\n\nI\u0027m now in the process of extracting the critical details from the first four screenshots of batch 4, and documenting them following the established format. So far, I\u0027ve logged the initial query to Guo, Lin, regarding the service issue and the verbose output requested. I\u0027ve also noted the discussion about the `-s` flag in the curl command. My attention is now on detailing the OpenSSL error and any related advice.\n\n\n**Summarizing Troubleshooting Steps**\n\nI\u0027ve documented the initial inquiry to Guo, Lin regarding the unresponsive `infraaos` service and shared the `kubectl` and `curl` commands used. I\u0027ve noted Lin\u0027s request for verbose output and my response. The discussion included the `-s` flag in curl, a typo fix for the https/http protocol, and the new namespace issue. I am now proceeding with detailing the actions for the new problem.\n\n\n**Analyzing Screenshot Interactions**\n\nI\u0027ve documented the interactions from the first eight screenshots of batch 4, and I\u0027ve already shared the `kubectl` and `curl` commands. I detailed Lin\u0027s request for verbose output and my response. The discussion included the `-s` flag, my response to a typo fix for the https/http protocol, and details about the new namespace issue. I provided updates on a new \"fault injected\" problem, including shared screenshots. I will also provide details of the current implementation.\n\n\n**Summarizing Interactions**\n\nI\u0027ve documented the interactions from the first nine screenshots of batch 4, and I\u0027m currently focusing on the steps to inject a fault into the system. The discussion included debugging a connection error and resolving an issue with `kubectl delete namespace`. We successfully injected a fault, and the next steps involve implementing a specific 503 error. After the meeting, we plan to create a Python script to automate the process and consider Yesenia\u0027s idea to visualize faults using Grafana and Prometheus. I will continue confirming the manual fault injection.\n\n\n**Analyzing Troubleshooting Steps**\n\nI\u0027ve documented the interactions from the first nine screenshots of batch 4, and I\u0027m currently focused on the steps to inject a fault into the system. The discussion included debugging a connection error and resolving an issue with `kubectl delete namespace`. We successfully injected a fault, and the next steps involve implementing a specific 503 error. After the meeting, we plan to create a Python script to automate the process and consider Yesenia\u0027s idea to visualize faults using Grafana and Prometheus. I will continue confirming the manual fault injection. Now, I\u0027m documenting the video I shared with May, Alexander ; Guo, Lin; and Hernandez, Yesenia, showing the fault injection, along with Yesenia\u0027s update on upcoming Confluence documentation.\n\n\n**Confirming the Injection**\n\nI\u0027m now documenting the video demonstrating the fault injection, which I shared with May, Alexander, Guo, Lin, and Hernandez, Yesenia. Yesenia also provided an update that she\u0027ll soon be documenting our work on Confluence. We confirmed that the node and deletion processes work as planned. I will focus on implementing a 503 error return, as the next step.\n\n\n**Reviewing Fault Injection Details**\n\nI\u0027ve documented sharing the video and confirmed the fault injection processes. May, Alexander; Guo, Lin; and Hernandez, Yesenia received the video, and Yesenia is preparing Confluence documentation. We confirmed the node maintenance and deletion processes. We will focus on implementing a specific 503 error return next.\n\n\n**Updating the Fault Injection Progress**\n\nI\u0027ve documented the steps to inject a fault, noting the video and successful demonstration shared with the team. We\u0027ve confirmed the node and deletion processes. Yesenia is preparing Confluence documentation, and we will now concentrate on implementing a specific 503 error return.\n\n\n**Reviewing the Injection Demonstration**\n\nI\u0027ve documented sharing the video and confirmed that the team received it. We validated node operations and deletion. Yesenia\u0027s Confluence documentation is underway, and my focus now shifts to implementing the 503 error return.\n\n\n**Documenting Fault Injection Video**\n\nI\u0027ve documented the steps to inject a fault, and successfully shared the video with the team to demonstrate the process. Hernandez, Yesenia is diligently preparing the Confluence documentation, and my next task is focused on implementing a specific 503 error return.\n\n\n",
+      "role": "model",
+      "tokenCount": 3432,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Continue Processing Screenshots**\n\nI\u0027m working on batch 4 of the Dell internship documentation, maintaining the same format and chronological flow from previous batches. The objective is to accurately represent the Teams screenshots, much like the prior entries. I\u0027m focusing on consistency in presentation for a complete record of the internship.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyze Internship Documentation**\n\nI\u0027ve initiated batch 4 of the Dell internship documentation, adhering to the established format and chronological flow. I\u0027m focusing on analyzing the first two screenshots, identifying the key actions, involved individuals, and any relevant files or links. My primary task is to extract pertinent information about a service issue and my troubleshooting steps, including deleting a namespace to resolve the problem.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Documenting the Interactions**\n\nI\u0027m now in the process of extracting the critical details from the first four screenshots of batch 4, and documenting them following the established format. So far, I\u0027ve logged the initial query to Guo, Lin, regarding the service issue and the verbose output requested. I\u0027ve also noted the discussion about the `-s` flag in the curl command. My attention is now on detailing the OpenSSL error and any related advice.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Troubleshooting Steps**\n\nI\u0027ve documented the initial inquiry to Guo, Lin regarding the unresponsive `infraaos` service and shared the `kubectl` and `curl` commands used. I\u0027ve noted Lin\u0027s request for verbose output and my response. The discussion included the `-s` flag in curl, a typo fix for the https/http protocol, and the new namespace issue. I am now proceeding with detailing the actions for the new problem.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Screenshot Interactions**\n\nI\u0027ve documented the interactions from the first eight screenshots of batch 4, and I\u0027ve already shared the `kubectl` and `curl` commands. I detailed Lin\u0027s request for verbose output and my response. The discussion included the `-s` flag, my response to a typo fix for the https/http protocol, and details about the new namespace issue. I provided updates on a new \"fault injected\" problem, including shared screenshots. I will also provide details of the current implementation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Interactions**\n\nI\u0027ve documented the interactions from the first nine screenshots of batch 4, and I\u0027m currently focusing on the steps to inject a fault into the system. The discussion included debugging a connection error and resolving an issue with `kubectl delete namespace`. We successfully injected a fault, and the next steps involve implementing a specific 503 error. After the meeting, we plan to create a Python script to automate the process and consider Yesenia\u0027s idea to visualize faults using Grafana and Prometheus. I will continue confirming the manual fault injection.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Troubleshooting Steps**\n\nI\u0027ve documented the interactions from the first nine screenshots of batch 4, and I\u0027m currently focused on the steps to inject a fault into the system. The discussion included debugging a connection error and resolving an issue with `kubectl delete namespace`. We successfully injected a fault, and the next steps involve implementing a specific 503 error. After the meeting, we plan to create a Python script to automate the process and consider Yesenia\u0027s idea to visualize faults using Grafana and Prometheus. I will continue confirming the manual fault injection. Now, I\u0027m documenting the video I shared with May, Alexander ; Guo, Lin; and Hernandez, Yesenia, showing the fault injection, along with Yesenia\u0027s update on upcoming Confluence documentation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Confirming the Injection**\n\nI\u0027m now documenting the video demonstrating the fault injection, which I shared with May, Alexander, Guo, Lin, and Hernandez, Yesenia. Yesenia also provided an update that she\u0027ll soon be documenting our work on Confluence. We confirmed that the node and deletion processes work as planned. I will focus on implementing a 503 error return, as the next step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reviewing Fault Injection Details**\n\nI\u0027ve documented sharing the video and confirmed the fault injection processes. May, Alexander; Guo, Lin; and Hernandez, Yesenia received the video, and Yesenia is preparing Confluence documentation. We confirmed the node maintenance and deletion processes. We will focus on implementing a specific 503 error return next.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Updating the Fault Injection Progress**\n\nI\u0027ve documented the steps to inject a fault, noting the video and successful demonstration shared with the team. We\u0027ve confirmed the node and deletion processes. Yesenia is preparing Confluence documentation, and we will now concentrate on implementing a specific 503 error return.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reviewing the Injection Demonstration**\n\nI\u0027ve documented sharing the video and confirmed that the team received it. We validated node operations and deletion. Yesenia\u0027s Confluence documentation is underway, and my focus now shifts to implementing the 503 error return.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Documenting Fault Injection Video**\n\nI\u0027ve documented the steps to inject a fault, and successfully shared the video with the team to demonstrate the process. Hernandez, Yesenia is diligently preparing the Confluence documentation, and my next task is focused on implementing a specific 503 error return.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Of course. Here is the documentation for the fourth batch of screenshots from your Dell internship.\n\n***\n\n**Monday, July 7, 2025, 12:00 PM**\n*   **Action:** Asked Guo, Lin for help diagnosing why the `infraaos` service was not responding as expected. I shared my `kubectl` and `curl` commands. I also added context that a previous issue (being unable to delete existing experiments) was resolved by force-deleting a namespace that was stuck in the \"Terminating\" state by removing its finalizers.\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Troubleshoot the `infraaos` connection with Guo, Lin.\n\n**Monday, July 7, 2025, 12:05 PM**\n*   **Action:** Per Guo, Lin\u0027s request, I re-ran my `curl` command with the `-vvv` flag for verbose output and shared the results.\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Await analysis of the verbose log from Guo, Lin.\n\n**Monday, July 7, 2025, 1:16 PM**\n*   **Action:** Responded to Guo, Lin\u0027s question about using `curl -s` (silent mode), explaining that I used it to hide the progress bar which I found distracting.\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Follow Guo, Lin\u0027s guidance on using command flags.\n\n**Monday, July 7, 2025, 1:23 PM**\n*   **Action:** Following Guo, Lin\u0027s advice, I removed the `-s` flag for debugging. I then shared the new `OpenSSL SSL_connect` error that appeared.\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Work with Guo, Lin to solve the new SSL error.\n\n**Monday, July 7, 2025, 1:28 PM**\n*   **Action:** Acknowledged a simple but critical typo pointed out by Guo, Lin: I was using `https` instead of `http` in the URL. After correcting it, I confirmed the command was now successful, returning a `202 Accepted` status.\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** The connection issue is resolved. Proceed with fault injection testing.\n\n**Monday, July 7, 2025, 1:50 PM**\n*   **Action:** Provided a status update on a new problem. After fixing the namespace issue, we were now facing a `expected docker:// but got containerd://` error. I noted that the original namespace deletion had stalled for over two hours, necessitating the forceful removal.\n*   **People:** Team (May, Alexander; Guo, Lin; Hernandez, Yesenia)\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Continue investigating the `containerd` issue and provide updates.\n\n**Monday, July 7, 2025, 2:01 PM**\n*   **Action:** Successfully injected a fault into the system. I shared a screenshot comparing the \"fault injected\" state vs. the \"fault not injected\" state.\n*   **People:** Guo, Lin; May, Alexander\n*   **Files:** Two embedded screenshots showing the successful fault injection.\n*   **Links:** None\n*   **Next:** The initial fault injection was successful.\n\n**Monday, July 7, 2025, 2:10 PM**\n*   **Action:** Clarified that the current success was a simple abort. I also provided context that this work was previously blocked by a namespace error.\n*   **People:** Team (May, Alexander; Guo, Lin; Hernandez, Yesenia)\n*   **Files:** None\n*   **Links:** None\n*   **Next:** The next step is to make the API return a specific 503 error message.\n\n**Monday, July 7, 2025, 2:18 PM**\n*   **Action:** Participated in a meeting where progress was discussed. May, Alexander summarized that Yesenia and I would focus on automating the fault injection steps into a Python script once they are fully confirmed.\n*   **People:** May, Alexander; Hernandez, Yesenia; Guo, Lin; Myself (Carl Vincent Ladres)\n*   **Files:** None\n*   **Links:** None\n*   **Decision:** The team decided to automate the manual steps via a Python script. Yesenia’s idea to use Grafana + Prometheus for visualization was approved as a future enhancement.\n\n**Monday, July 7, 2025, 2:26 PM**\n*   **Action:** Shared a video recording of the successful fault injection process for the team\u0027s reference.\n*   **People:** May, Alexander; Guo, Lin; Hernandez, Yesenia\n*   **Files:** `3_Successful_503-abort_070725.mkv`\n*   **Links:** None\n*   **Next:** The video will serve as a reference for the team and for future documentation.\n\n**Monday, July 7, 2025, 2:27 PM**\n*   **Action:** Received confirmation from Yesenia that she would create Confluence documentation for the process.\n*   **People:** Hernandez, Yesenia\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Yesenia will create and share the Confluence documentation.\n\n**Tuesday, July 8, 2025, 9:46 AM**\n*   **Action:** Confirmed that the node `enter-maint`/`exit-maint` and deletion functionalities were working as expected.\n*   **People:** Team\n*   **Files:** None\n*   **Links:** None\n*   **Next:** I will now focus on the next implementation goal: making the API return a specific 503 error message.\n\n**Tuesday, July 8, 2025, 11:11 AM**\n*   **Action:** In response to Guo, Lin, Yesenia confirmed that she and I would be ready to present our updates at the Thursday evening CNOS meeting.\n*   **People:** Guo, Lin; Hernandez, Yesenia; Myself (Carl Vincent Ladres)\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Yesenia and I will prepare presentation slides for the Thursday meeting.\n\n**Monday, August 4, 2025**\n*   **Action:** Began preparing for the final presentation. I asked for feedback on the Executive Summary, specifically about which customers to mention (e.g., Wells Fargo) and how to articulate the project\u0027s value to Dell more specifically.\n*   **People:** Seelam, Karunakara; Le, Dave\n*   **Files:** `Juan 1to1 Presentation Feedback.mkv`, an embedded screenshot of the \"Executive Summary\" slide.\n*   **Links:** None\n*   **Next:** Await feedback from senior team members to refine the presentation content.\n\n**Monday, August 4, 2025, 9:00 PM**\n*   **Action:** Received and acknowledged feedback on the presentation. Le Dave and Karunakara Seelam advised against naming specific external customers and suggested positioning the project as an internal framework for simulating errors, rather than a product.\n*   **People:** Le, Dave; Seelam, Karunakara\n*   **Files:** None\n*   **Links:** None\n*   **Next:** I will update the presentation slides to reflect this feedback, focusing on the tool\u0027s value as an internal framework for engineering and testing teams.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1766,
+      "parts": [{
+        "text": "Of course. Here is the documentation"
+      }, {
+        "text": " for the fourth batch of screenshots from your Dell internship.\n\n***\n\n**Monday, July 7, 20"
+      }, {
+        "text": "25, 12:00 PM**\n*   **Action:** Asked Guo, Lin for help diagnosing"
+      }, {
+        "text": " why the `infraaos` service was not responding as expected. I shared my `kubectl` and `curl` commands."
+      }, {
+        "text": " I also added context that a previous issue (being unable to delete existing experiments) was resolved by force-deleting a"
+      }, {
+        "text": " namespace that was stuck in the \"Terminating\" state by removing its finalizers.\n*   **People:** Guo"
+      }, {
+        "text": ", Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Troubleshoot the `infra"
+      }, {
+        "text": "aos` connection with Guo, Lin.\n\n**Monday, July 7, 2025, 12"
+      }, {
+        "text": ":05 PM**\n*   **Action:** Per Guo, Lin\u0027s request, I re-ran my"
+      }, {
+        "text": " `curl` command with the `-vvv` flag for verbose output and shared the results.\n*   **People:** Guo"
+      }, {
+        "text": ", Lin\n*   **Files:** None\n*   **Links:** None\n*   **Next:** Await"
+      }, {
+        "text": " analysis of the verbose log from Guo, Lin.\n\n**Monday, July 7, 2025, "
+      }, {
+        "text": "1:16 PM**\n*   **Action:** Responded to Guo, Lin\u0027s question about using"
+      }, {
+        "text": " `curl -s` (silent mode), explaining that I used it to hide the progress bar which I found distracting."
+      }, {
+        "text": "\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n"
+      }, {
+        "text": "*   **Next:** Follow Guo, Lin\u0027s guidance on using command flags.\n\n**Monday, July 7, 2"
+      }, {
+        "text": "025, 1:23 PM**\n*   **Action:** Following Guo, Lin\u0027s advice, I"
+      }, {
+        "text": " removed the `-s` flag for debugging. I then shared the new `OpenSSL SSL_connect` error that appeared"
+      }, {
+        "text": ".\n*   **People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None"
+      }, {
+        "text": "\n*   **Next:** Work with Guo, Lin to solve the new SSL error.\n\n**Monday, July 7, "
+      }, {
+        "text": "2025, 1:28 PM**\n*   **Action:** Acknowledged a simple but"
+      }, {
+        "text": " critical typo pointed out by Guo, Lin: I was using `https` instead of `http` in the URL. After"
+      }, {
+        "text": " correcting it, I confirmed the command was now successful, returning a `202 Accepted` status.\n*   "
+      }, {
+        "text": "**People:** Guo, Lin\n*   **Files:** None\n*   **Links:** None\n*   **"
+      }, {
+        "text": "Next:** The connection issue is resolved. Proceed with fault injection testing.\n\n**Monday, July 7, 2025"
+      }, {
+        "text": ", 1:50 PM**\n*   **Action:** Provided a status update on a new problem. After"
+      }, {
+        "text": " fixing the namespace issue, we were now facing a `expected docker:// but got containerd://` error. I noted"
+      }, {
+        "text": " that the original namespace deletion had stalled for over two hours, necessitating the forceful removal.\n*   **People:** Team"
+      }, {
+        "text": " (May, Alexander; Guo, Lin; Hernandez, Yesenia)\n*   **Files:** None\n*   "
+      }, {
+        "text": "**Links:** None\n*   **Next:** Continue investigating the `containerd` issue and provide updates.\n\n**Monday, July"
+      }, {
+        "text": " 7, 2025, 2:01 PM**\n*   **Action:** Successfully injected"
+      }, {
+        "text": " a fault into the system. I shared a screenshot comparing the \"fault injected\" state vs. the \"fault not injected"
+      }, {
+        "text": "\" state.\n*   **People:** Guo, Lin; May, Alexander\n*   **Files:** Two embedded"
+      }, {
+        "text": " screenshots showing the successful fault injection.\n*   **Links:** None\n*   **Next:** The initial fault injection was"
+      }, {
+        "text": " successful.\n\n**Monday, July 7, 2025, 2:10 PM**\n"
+      }, {
+        "text": "*   **Action:** Clarified that the current success was a simple abort. I also provided context that this work was previously"
+      }, {
+        "text": " blocked by a namespace error.\n*   **People:** Team (May, Alexander; Guo, Lin; Hernandez, Yesenia"
+      }, {
+        "text": ")\n*   **Files:** None\n*   **Links:** None\n*   **Next:** The next step"
+      }, {
+        "text": " is to make the API return a specific 503 error message.\n\n**Monday, July 7, 20"
+      }, {
+        "text": "25, 2:18 PM**\n*   **Action:** Participated in a meeting where progress was discussed. May"
+      }, {
+        "text": ", Alexander summarized that Yesenia and I would focus on automating the fault injection steps into a Python script once they are fully confirmed.\n"
+      }, {
+        "text": "*   **People:** May, Alexander; Hernandez, Yesenia; Guo, Lin; Myself (Carl Vincent Ladres)\n"
+      }, {
+        "text": "*   **Files:** None\n*   **Links:** None\n*   **Decision:** The team decided to automate"
+      }, {
+        "text": " the manual steps via a Python script. Yesenia’s idea to use Grafana + Prometheus for visualization was approved as a future enhancement"
+      }, {
+        "text": ".\n\n**Monday, July 7, 2025, 2:26 PM**\n*"
+      }, {
+        "text": "   **Action:** Shared a video recording of the successful fault injection process for the team\u0027s reference.\n*   **People:**"
+      }, {
+        "text": " May, Alexander; Guo, Lin; Hernandez, Yesenia\n*   **Files:** `3_Successful_5"
+      }, {
+        "text": "03-abort_070725.mkv`\n*   **Links:** None\n*"
+      }, {
+        "text": "   **Next:** The video will serve as a reference for the team and for future documentation.\n\n**Monday, July "
+      }, {
+        "text": "7, 2025, 2:27 PM**\n*   **Action:** Received confirmation from"
+      }, {
+        "text": " Yesenia that she would create Confluence documentation for the process.\n*   **People:** Hernandez, Yesenia\n"
+      }, {
+        "text": "*   **Files:** None\n*   **Links:** None\n*   **Next:** Yesenia will create and"
+      }, {
+        "text": " share the Confluence documentation.\n\n**Tuesday, July 8, 2025, 9:4"
+      }, {
+        "text": "6 AM**\n*   **Action:** Confirmed that the node `enter-maint`/`exit-m"
+      }, {
+        "text": "aint` and deletion functionalities were working as expected.\n*   **People:** Team\n*   **Files:** None\n*"
+      }, {
+        "text": "   **Links:** None\n*   **Next:** I will now focus on the next implementation goal: making the API return a specific"
+      }, {
+        "text": " 503 error message.\n\n**Tuesday, July 8, 2025, 11"
+      }, {
+        "text": ":11 AM**\n*   **Action:** In response to Guo, Lin, Yesenia confirmed that she and I would"
+      }, {
+        "text": " be ready to present our updates at the Thursday evening CNOS meeting.\n*   **People:** Guo, Lin; Hernandez"
+      }, {
+        "text": ", Yesenia; Myself (Carl Vincent Ladres)\n*   **Files:** None\n*   **Links:**"
+      }, {
+        "text": " None\n*   **Next:** Yesenia and I will prepare presentation slides for the Thursday meeting.\n\n**Monday, August 4"
+      }, {
+        "text": ", 2025**\n*   **Action:** Began preparing for the final presentation. I asked for feedback on"
+      }, {
+        "text": " the Executive Summary, specifically about which customers to mention (e.g., Wells Fargo) and how to articulate the project"
+      }, {
+        "text": "\u0027s value to Dell more specifically.\n*   **People:** Seelam, Karunakara; Le, Dave\n"
+      }, {
+        "text": "*   **Files:** `Juan 1to1 Presentation Feedback.mkv`, an embedded screenshot of the \"Executive Summary\" slide"
+      }, {
+        "text": ".\n*   **Links:** None\n*   **Next:** Await feedback from senior team members to refine the presentation content."
+      }, {
+        "text": "\n\n**Monday, August 4, 2025, 9:00 PM**\n*   "
+      }, {
+        "text": "**Action:** Received and acknowledged feedback on the presentation. Le Dave and Karunakara Seelam advised against naming specific external"
+      }, {
+        "text": " customers and suggested positioning the project as an internal framework for simulating errors, rather than a product.\n*   **People"
+      }, {
+        "text": ":** Le, Dave; Seelam, Karunakara\n*   **Files:** None\n*   **Links"
+      }, {
+        "text": ":** None\n*   **Next:** I will update the presentation slides to reflect this feedback, focusing on the tool\u0027"
+      }, {
+        "text": "s value as an internal framework for engineering and testing teams."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

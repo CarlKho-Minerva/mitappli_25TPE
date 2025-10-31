@@ -1,0 +1,326 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": false,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1vh5hi6WG0U0OCncY5FKhR4RC5rEavOuF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1XxpuXu1FMejeK4emlg_d3q2StCPJ4puk"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1r4hB6PJfwEA4LdQ8_iASIPfsiWuw9R3H"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Sw6r9201zQ4COS21ACUYQl46-S93go24"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1RYiitWDJttMJsGgDlGhtloNIWo-A6xsH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "10SNymLCK8ab-aV_sw-yFLwFLoTrxwWiP"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Ur_t71rPizLuqSdI7fQeiER1S5WS6_XD"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ITRlhmHYOWIC4CSr5uJJbk0eFLgYRQ_d"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1NIINRq3m9Nz6ysF4cUGPp6xlJ4peVdQS"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1XjhFcsnpc0fCdZzgom0Mi2CJNUfMR7qp"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1NqPl-8tcV5vqbBvRzGsaQyXxHAZeL2gP"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1fzVaZ021XFc31JqAm0gJGYEiSCPybLlU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1oMwPRUSeKuWOlizEffNDilYNyjxHSrkA"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "17Ti5dAJGOSp7gcqcIh9u2zv8e3SNmUSi"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1wu6HZCimpocI5FBEh1-aoR99BGSJosGt"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1gvtP_qgbnsxwJ1MuRmCIb4RzBT-Z6hpH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Xrfd7Tp-Pi4fxLXBbZ4RxcI9JCKgGc9Y"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1HxmCrG5Uvof60CB1ygQjdtWWTCIWAuyA"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1swEzcqJrSR9kXo6tQuCai3uBxhXrc3ol"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "123Mx3ZS8NyuoWwupaGasU0nNb_ahUiN3"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveDocument": {
+        "id": "1mERdDE9N1_7d7sTHGbq7OTAYio53SBvJ"
+      },
+      "role": "user",
+      "tokenCount": 180
+    }, {
+      "text": "**Reviewing Batch Five**\n\nI\u0027m currently processing the fifth batch of screenshots from the Teams chat. So far, I\u0027ve analyzed screenshot 21. It was taken on Thursday, June 26th at 1:38 PM and involves Carl Kho. I\u0027m focusing on extracting relevant information for further analysis.\n\n\n**Processing Screenshot Data**\n\nI\u0027ve just finished analyzing the 21st and 22nd screenshots from the fifth batch. Screenshot 21 details a discussion regarding a deletion issue, with Carl Kho sharing a terminal screenshot and seeking help. Harsh and Andrew Yunt offer suggestions, Andrew\u0027s being followed up on in screenshot 22. Unfortunately, it yielded an error. Now, Andrew has suggested Harsh\u0027s command. I\u0027m focusing on the technical steps and the conversational flow.\n\n\n**Delving Deeper into Batch 5**\n\nI\u0027ve just finished analyzing screenshot 23 from the fifth batch. The debugging continues, with Carl facing the same \"not found\" error despite specifying the namespace. Andrew suggests checking for existing resources, and Carl reports none are found. He then mentions a delay related to applying the configuration file. Now I\u0027m focusing on the potential implications of this delay and the interplay between the `apply` and `delete` operations.\n\n\n**Examining the Conversation Flow**\n\nI\u0027ve just finished analyzing the 24th screenshot in batch 5. Carl fixed a syntax error but faced a new issue during the application process. Alexander and Andrew clarified the distinction between the local YAML file and the Kubernetes object. The conversation is now circling around the \"ghost\" file and how to properly reconcile the local file with the cluster. I\u0027m focusing on the steps to resolve this, in a manner that\u0027s easy to follow.\n\n\n**Reconciling Local \u0026 Cluster State**\n\nI\u0027m now analyzing the fifth batch, specifically focusing on the conversation about a deletion issue. I\u0027ve noted the error encountered when applying the YAML file and the subsequent clarification on the relationship between local files and Kubernetes objects. It appears Carl initially had a syntax error in the file. Correcting this resolved the initial application issue. However, a \"ghost\" file continued to cause confusion and it wasn\u0027t easy to delete. Andrew and Alexander have helped by clarifying the differences between the local YAML file and the Kubernetes object within the cluster. My immediate next step is to examine the precise steps to ensure that the cluster and local file are in sync.\n\n\n**Tracing the Resolution Path**\n\nNow, I\u0027m examining the final screenshots, the resolution process has been streamlined. It looks like fixing the YAML syntax within `fail-aos-precheck.yaml` was the key. This allowed `kubectl apply` to succeed, leading to the creation of the Kubernetes object. With the object in place, deletion was then possible. The team successfully resolved the initial deletion issue and scheduled a meeting to discuss. I\u0027ll summarize the final meeting and the assignment of a new Jira task.\n\n\n**Tracking the Resolution Steps**\n\nI\u0027m currently summarizing the resolution process within the fifth batch. It looks like the key was fixing a syntax error in the YAML file, which allowed for `kubectl apply` to succeed, creating the needed Kubernetes object. Once the object was properly created, deletion became possible. A meeting was also successfully arranged. I am still focusing on the technical steps and how they interact.\n\n\n**Summarizing Resolution Steps**\n\nI\u0027m now summarizing the resolution steps. I observed that fixing the syntax error in the YAML file allowed the `kubectl apply` command to create the necessary Kubernetes object. This, in turn, facilitated the deletion process. A meeting was also successfully arranged. I\u0027m focusing on the technical steps that allowed this resolution.\n\n\n**Tracking the Deletion Resolution**\n\nI\u0027ve just finished analyzing the fifth batch of screenshots. Fixing the syntax in the YAML file allowed the successful creation of the Kubernetes object via `kubectl apply`. This subsequently enabled the deletion. The team then scheduled a meeting to discuss and assigned a new Jira task. I\u0027m focusing on these key technical steps.\n\n\n**Synthesizing Findings from Batch 5**\n\nI\u0027ve just finished analyzing the fifth batch of screenshots. The team successfully resolved a deletion issue related to a Kubernetes object. Initially, the team encountered an issue when trying to delete an HTTPChaos resource. Debugging steps began with checking the available resources and suggesting commands to delete it. Syntax errors were identified, then the team clarified that the local YAML file is just a blueprint, and it must be created as a Kubernetes object for deletion to occur. I will look at how the code was fixed to resolve the errors.\n\n\n",
+      "role": "model",
+      "tokenCount": 2514,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Reviewing Batch Five**\n\nI\u0027m currently processing the fifth batch of screenshots from the Teams chat. So far, I\u0027ve analyzed screenshot 21. It was taken on Thursday, June 26th at 1:38 PM and involves Carl Kho. I\u0027m focusing on extracting relevant information for further analysis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Processing Screenshot Data**\n\nI\u0027ve just finished analyzing the 21st and 22nd screenshots from the fifth batch. Screenshot 21 details a discussion regarding a deletion issue, with Carl Kho sharing a terminal screenshot and seeking help. Harsh and Andrew Yunt offer suggestions, Andrew\u0027s being followed up on in screenshot 22. Unfortunately, it yielded an error. Now, Andrew has suggested Harsh\u0027s command. I\u0027m focusing on the technical steps and the conversational flow.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Delving Deeper into Batch 5**\n\nI\u0027ve just finished analyzing screenshot 23 from the fifth batch. The debugging continues, with Carl facing the same \"not found\" error despite specifying the namespace. Andrew suggests checking for existing resources, and Carl reports none are found. He then mentions a delay related to applying the configuration file. Now I\u0027m focusing on the potential implications of this delay and the interplay between the `apply` and `delete` operations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining the Conversation Flow**\n\nI\u0027ve just finished analyzing the 24th screenshot in batch 5. Carl fixed a syntax error but faced a new issue during the application process. Alexander and Andrew clarified the distinction between the local YAML file and the Kubernetes object. The conversation is now circling around the \"ghost\" file and how to properly reconcile the local file with the cluster. I\u0027m focusing on the steps to resolve this, in a manner that\u0027s easy to follow.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reconciling Local \u0026 Cluster State**\n\nI\u0027m now analyzing the fifth batch, specifically focusing on the conversation about a deletion issue. I\u0027ve noted the error encountered when applying the YAML file and the subsequent clarification on the relationship between local files and Kubernetes objects. It appears Carl initially had a syntax error in the file. Correcting this resolved the initial application issue. However, a \"ghost\" file continued to cause confusion and it wasn\u0027t easy to delete. Andrew and Alexander have helped by clarifying the differences between the local YAML file and the Kubernetes object within the cluster. My immediate next step is to examine the precise steps to ensure that the cluster and local file are in sync.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Tracing the Resolution Path**\n\nNow, I\u0027m examining the final screenshots, the resolution process has been streamlined. It looks like fixing the YAML syntax within `fail-aos-precheck.yaml` was the key. This allowed `kubectl apply` to succeed, leading to the creation of the Kubernetes object. With the object in place, deletion was then possible. The team successfully resolved the initial deletion issue and scheduled a meeting to discuss. I\u0027ll summarize the final meeting and the assignment of a new Jira task.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Tracking the Resolution Steps**\n\nI\u0027m currently summarizing the resolution process within the fifth batch. It looks like the key was fixing a syntax error in the YAML file, which allowed for `kubectl apply` to succeed, creating the needed Kubernetes object. Once the object was properly created, deletion became possible. A meeting was also successfully arranged. I am still focusing on the technical steps and how they interact.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Resolution Steps**\n\nI\u0027m now summarizing the resolution steps. I observed that fixing the syntax error in the YAML file allowed the `kubectl apply` command to create the necessary Kubernetes object. This, in turn, facilitated the deletion process. A meeting was also successfully arranged. I\u0027m focusing on the technical steps that allowed this resolution.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Tracking the Deletion Resolution**\n\nI\u0027ve just finished analyzing the fifth batch of screenshots. Fixing the syntax in the YAML file allowed the successful creation of the Kubernetes object via `kubectl apply`. This subsequently enabled the deletion. The team then scheduled a meeting to discuss and assigned a new Jira task. I\u0027m focusing on these key technical steps.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Findings from Batch 5**\n\nI\u0027ve just finished analyzing the fifth batch of screenshots. The team successfully resolved a deletion issue related to a Kubernetes object. Initially, the team encountered an issue when trying to delete an HTTPChaos resource. Debugging steps began with checking the available resources and suggesting commands to delete it. Syntax errors were identified, then the team clarified that the local YAML file is just a blueprint, and it must be created as a Kubernetes object for deletion to occur. I will look at how the code was fixed to resolve the errors.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Here is the documentation from the fifth batch of screenshots.\n\n### Thursday, June 26, 2025\n\n**[1:38 PM - 2:00 PM]**\n*   **Action:** Troubleshooted a `kubectl delete` command that was failing. The resource (`httpchaos`) could not be found, despite my belief it existed. I tried a command suggested by Andrew, but it failed.\n*   **People:** Ragadwala, Harsh; Yunt, Andrew\n*   **Next:** Harsh and Andrew suggested adding the namespace (`-n chaos-mesh-demo`) to the delete command. I will try this next.\n\n**[2:01 PM - 2:03 PM]**\n*   **Action:** Ran the `kubectl delete` command with the correct namespace, but it still failed with a \"not found\" error. I explained that when I try to *apply* the YAML file, the system acknowledges it exists, creating a contradiction.\n*   **People:** Yunt, Andrew; May, Alexander\n*   **Next:** Alexander asked to see the error message I receive when *applying* the file, not deleting it.\n\n**[2:03 PM - 2:10 PM]**\n*   **Action:** Shared the error message from `kubectl apply`. The error log (`spec.action: Invalid value: \"bug\"`) revealed a typo in my YAML file. I realized the Kubernetes object was never being created due to this validation error, even though the local YAML file existed. The team explained the distinction between a local file (blueprint) and a cluster object (instance).\n*   **People:** May, Alexander; Yunt, Andrew\n*   **Next:** I need to correct the `spec.action` value in my `fail-aos-precheck.yaml` file from \"bug\" to a valid action like \"abort\" or \"delay\".\n\n**[2:14 PM]**\n*   **Action:** Confirmed that correcting the YAML file fixed the issue. The `kubectl apply` command now works, and I was able to successfully run and then delete the chaos experiment. I declared that I had no more blockers on this task.\n*   **People:** Guo, Lin\n*   **Files:** `fail-aos-precheck.yaml` (corrected version)\n*   **Next:** All demo scripts are now ready for recording.\n\n**[3:58 PM - 5:08 PM]**\n*   **Action:** Attended a team meeting after getting the demo scripts ready.\n*   **People:** Guo, Lin; May, Alexander; Hernandez, Yesenia\n*   **Next:** The team decided to move the demo recording to next week (Monday). We will have a meeting tomorrow (Friday) to discuss the implementation details now that the experiments are working.\n\n**[5:10 PM]**\n*   **Action:** Acknowledged the new plan for the meeting and recording.\n*   **People:** Hernandez, Yesenia; Guo, Lin\n\n---\n### Monday, June 30, 2025\n\n**[8:39 AM]**\n*   **Action:** Was asked by Lin to take on a new story for the current sprint.\n*   **People:** Guo, Lin; Hernandez, Yesenia\n\n**[10:26 AM]**\n*   **Action:** Was assigned a new task by Lin.\n*   **People:** Guo, Lin; Ragadwala, Harsh\n*   **Links:** `https://jira.cec.lab.emc.com/browse/CPDTE-168`\n\n---\n### Tuesday, July 1, 2025\n\n**[11:23 AM]**\n*   **Action:** Listened to Yesenia\u0027s question about simulating a 503 fault and received links from Lin related to the AOS precheck.\n*   **People:** Hernandez, Yesenia; Guo, Lin\n*   **Links:**\n    *   `https://confluence.cec.lab.emc.com/pages/viewpage.action?pageId\u003d1...` (Santorini documentation)\n    *   `AOS spec: Santorini Scale-out Application Orchestrator Service (AOS) Functional Specification - Santorini - ISG Confluence (internal)`\n    *   `AOS precheck source codes: nodemm_precheck - OpenGrok cross reference for /im_santorini/ddos/installer/cluster/aos/nodemaintain/nodemm_precheck/`\n\n**[2:42 PM]**\n*   **Action:** Started the process of uninstalling Longhorn from the cluster. I learned how to use `scp` from Alex to transfer files. The uninstall script ran but got stuck waiting for an \"nfs patch.\" I investigated and found the NFS pod was missing. I am currently blocked.\n*   **People:** May, Alexander; Guo, Lin\n*   **Files:** Shared a screenshot of the Longhorn uninstall documentation I created.\n\n**[2:57 PM - 4:10 PM]**\n*   **Action:** Shared the full output of the failed Longhorn uninstall script. After cancelling the hung script, Lin confirmed it was not working and suggested that redeploying the cluster might be the only solution.\n*   **People:** May, Alexander; Guo, Lin\n*   **Next:** I asked Lin and Alexander if I should attempt the redeployment or if they will trigger it from a Jenkins pipeline. Alexander said he might be able to kick it off later.\n\n---\n### Thursday, July 3, 2025\n\n**[1:35 PM]**\n*   **Action:** Reviewed a new Confluence page Lin created for the Chaos Mesh Proof of Concept and asked about the formatting.\n*   **People:** Guo, Lin; Hernandez, Yesenia\n*   **Links:** `https://confluence.cec.lab.emc.com/pages/viewpage.action?pageId\u003d227835098\u0026focusedCommentId\u003dCNOS-MeshForCNOSNegativeFunctionalTestingonSantorini/Hydra-xRMCluster-5-podchaos`\n\n---\n### Friday, July 4, 2025\n\n**[12:55 PM]**\n*   **Action:** Shared the first draft of our final presentation with the team and requested feedback.\n*   **People:** Everyone\n*   **Files:** `Final Chaos Mesh Demo I Draft 1.pptx`\n\n**[Timestamp not visible, assumed Friday]**\n*   **Action:** Shared a video explaining the rationale behind my work, as discussed in a 1:1 meeting with my mentor.\n*   **People:** My mentor\n*   **Files:** An embedded video file.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1469,
+      "parts": [{
+        "text": "Here is the documentation from the fifth"
+      }, {
+        "text": " batch of screenshots.\n\n### Thursday, June 26, 2025\n\n**[1:38 PM"
+      }, {
+        "text": " - 2:00 PM]**\n*   **Action:** Troubleshooted a `kubectl delete` command that"
+      }, {
+        "text": " was failing. The resource (`httpchaos`) could not be found, despite my belief it existed. I tried a command suggested by Andrew"
+      }, {
+        "text": ", but it failed.\n*   **People:** Ragadwala, Harsh; Yunt, Andrew\n*   **Next"
+      }, {
+        "text": ":** Harsh and Andrew suggested adding the namespace (`-n chaos-mesh-demo`) to the delete command. I will try this next"
+      }, {
+        "text": ".\n\n**[2:01 PM - 2:03 PM]**\n*   **Action:**"
+      }, {
+        "text": " Ran the `kubectl delete` command with the correct namespace, but it still failed with a \"not found\" error."
+      }, {
+        "text": " I explained that when I try to *apply* the YAML file, the system acknowledges it exists, creating a contradiction.\n"
+      }, {
+        "text": "*   **People:** Yunt, Andrew; May, Alexander\n*   **Next:** Alexander asked to see the error"
+      }, {
+        "text": " message I receive when *applying* the file, not deleting it.\n\n**[2:03 PM - "
+      }, {
+        "text": "2:10 PM]**\n*   **Action:** Shared the error message from `kubectl apply`. The error log"
+      }, {
+        "text": " (`spec.action: Invalid value: \"bug\"`) revealed a typo in my YAML file. I realized the Kubernetes"
+      }, {
+        "text": " object was never being created due to this validation error, even though the local YAML file existed. The team explained the distinction"
+      }, {
+        "text": " between a local file (blueprint) and a cluster object (instance).\n*   **People:** May, Alexander; Yunt"
+      }, {
+        "text": ", Andrew\n*   **Next:** I need to correct the `spec.action` value in my `fail-aos"
+      }, {
+        "text": "-precheck.yaml` file from \"bug\" to a valid action like \"abort\" or \"delay\".\n\n**["
+      }, {
+        "text": "2:14 PM]**\n*   **Action:** Confirmed that correcting the YAML file fixed the issue. The"
+      }, {
+        "text": " `kubectl apply` command now works, and I was able to successfully run and then delete the chaos experiment. I declared"
+      }, {
+        "text": " that I had no more blockers on this task.\n*   **People:** Guo, Lin\n*   **Files"
+      }, {
+        "text": ":** `fail-aos-precheck.yaml` (corrected version)\n*   **Next:** All demo scripts are now ready"
+      }, {
+        "text": " for recording.\n\n**[3:58 PM - 5:08 PM]**\n*   **Action:** Att"
+      }, {
+        "text": "ended a team meeting after getting the demo scripts ready.\n*   **People:** Guo, Lin; May, Alexander; Hernandez"
+      }, {
+        "text": ", Yesenia\n*   **Next:** The team decided to move the demo recording to next week (Monday). We"
+      }, {
+        "text": " will have a meeting tomorrow (Friday) to discuss the implementation details now that the experiments are working.\n\n**[5:1"
+      }, {
+        "text": "0 PM]**\n*   **Action:** Acknowledged the new plan for the meeting and recording.\n*   **People"
+      }, {
+        "text": ":** Hernandez, Yesenia; Guo, Lin\n\n---\n### Monday, June 30, 2025\n\n"
+      }, {
+        "text": "**[8:39 AM]**\n*   **Action:** Was asked by Lin to take on a new story"
+      }, {
+        "text": " for the current sprint.\n*   **People:** Guo, Lin; Hernandez, Yesenia\n\n**[10:"
+      }, {
+        "text": "26 AM]**\n*   **Action:** Was assigned a new task by Lin.\n*   **People:** Guo,"
+      }, {
+        "text": " Lin; Ragadwala, Harsh\n*   **Links:** `https://jira.cec.lab.emc"
+      }, {
+        "text": ".com/browse/CPDTE-168`\n\n---\n### Tuesday, July 1, "
+      }, {
+        "text": "2025\n\n**[11:23 AM]**\n*   **Action:** Listened to Yes"
+      }, {
+        "text": "enia\u0027s question about simulating a 503 fault and received links from Lin related to the AOS precheck."
+      }, {
+        "text": "\n*   **People:** Hernandez, Yesenia; Guo, Lin\n*   **Links:**\n    *   "
+      }, {
+        "text": "`https://confluence.cec.lab.emc.com/pages/viewpage.action?pageId"
+      }, {
+        "text": "\u003d1...` (Santorini documentation)\n    *   `AOS spec: Santorini Scale-out Application Orchestr"
+      }, {
+        "text": "ator Service (AOS) Functional Specification - Santorini - ISG Confluence (internal)`\n    *   `AOS pre"
+      }, {
+        "text": "check source codes: nodemm_precheck - OpenGrok cross reference for /im_santorini/ddos/installer"
+      }, {
+        "text": "/cluster/aos/nodemaintain/nodemm_precheck/`\n\n**[2:42 PM]**"
+      }, {
+        "text": "\n*   **Action:** Started the process of uninstalling Longhorn from the cluster. I learned how to use `"
+      }, {
+        "text": "scp` from Alex to transfer files. The uninstall script ran but got stuck waiting for an \"nfs patch.\" I investigated"
+      }, {
+        "text": " and found the NFS pod was missing. I am currently blocked.\n*   **People:** May, Alexander; Guo, Lin\n"
+      }, {
+        "text": "*   **Files:** Shared a screenshot of the Longhorn uninstall documentation I created.\n\n**[2:57"
+      }, {
+        "text": " PM - 4:10 PM]**\n*   **Action:** Shared the full output of the failed Long"
+      }, {
+        "text": "horn uninstall script. After cancelling the hung script, Lin confirmed it was not working and suggested that redeploying the cluster might"
+      }, {
+        "text": " be the only solution.\n*   **People:** May, Alexander; Guo, Lin\n*   **Next:**"
+      }, {
+        "text": " I asked Lin and Alexander if I should attempt the redeployment or if they will trigger it from a Jenkins pipeline. Alexander"
+      }, {
+        "text": " said he might be able to kick it off later.\n\n---\n### Thursday, July 3, 202"
+      }, {
+        "text": "5\n\n**[1:35 PM]**\n*   **Action:** Reviewed a new Confluence page Lin"
+      }, {
+        "text": " created for the Chaos Mesh Proof of Concept and asked about the formatting.\n*   **People:** Guo, Lin; Hernandez,"
+      }, {
+        "text": " Yesenia\n*   **Links:** `https://confluence.cec.lab.emc.com/pages"
+      }, {
+        "text": "/viewpage.action?pageId\u003d227835098\u0026focusedCommentId\u003dCN"
+      }, {
+        "text": "OS-MeshForCNOSNegativeFunctionalTestingonSantorini/Hydra-xRMCluster-5-podchaos"
+      }, {
+        "text": "`\n\n---\n### Friday, July 4, 2025\n\n**[12:55"
+      }, {
+        "text": " PM]**\n*   **Action:** Shared the first draft of our final presentation with the team and requested feedback.\n*"
+      }, {
+        "text": "   **People:** Everyone\n*   **Files:** `Final Chaos Mesh Demo I Draft 1.pptx`"
+      }, {
+        "text": "\n\n**[Timestamp not visible, assumed Friday]**\n*   **Action:** Shared a video explaining the rationale behind my"
+      }, {
+        "text": " work, as discussed in a 1:1 meeting with my mentor.\n*   **People:** My mentor\n"
+      }, {
+        "text": "*   **Files:** An embedded video file."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

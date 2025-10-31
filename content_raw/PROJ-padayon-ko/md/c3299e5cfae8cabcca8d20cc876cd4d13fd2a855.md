@@ -1,0 +1,67 @@
+# Scholarship Name2
+
+For which major or course?: Arts and Humanities
+Who can apply?: Existing Undergrads
+What do I get?: Half Tuition Fee
+Until when can I apply?: August 9, 2024
+Save for Later?: No
+Status: Not started
+
+### Where can I apply?
+
+[Megaworld Foundation, Inc.](https://www.megaworldfoundation.com/scholarship_program)
+
+Click this website to apply ↑ Read below **first** for details
+
+Working on this? 
+
+Finished Applying?
+
+Not interested?
+
+# **Table of contents**
+
+## What do I get?
+
+> PHP 25,000.00
+> 
+- Full tuition fee coverage
+- Allowances accessible via Megaworld Foundation-issued ATM cards
+- Participation in volunteerism activities and seminars
+- Career opportunities with Megaworld, its subsidiaries, and affiliates after graduation
+
+## Who can apply for this?
+
+**Incoming freshmen with:**
+
+- A final grade report in senior high school with at least an 85% average and at least 80% in all subjects
+- A passing result from a university entrance exam, letter of admission, or certificate of enrollment
+- (If available) A certificate of upper 10% class ranking of the graduating batch
+
+**Incoming sophomores and juniors with:**
+
+- All grade reports from previous semesters with at least an 85% GPA and at least 80% in all subjects
+- A full load enrollment assessment/registration form with class schedule
+- Complete and most updated course curriculum
+
+## What do I need to prepare?
+
+If you need the same documents multiple times, add them in  for easy access.
+
+- [x]  Final grade report
+- [x]  University entrance exam result/letter of admission/certificate of enrollment
+- [x]  Certificate of upper 10% class ranking
+- [ ]  Grade reports from previous semesters
+- [ ]  Enrollment assessment/registration form
+- [ ]  Course curriculum
+- [ ]  Income Tax Return/BIR Tax Exemption Certificate/Affidavit of Non-filing of Income Tax
+- [ ]  Birth certificate
+- [ ]  Endorsement letter
+- [ ]  Utility bills
+- [ ]  2X2 ID pictures
+- [ ]  1X1 ID pictures
+- [ ]  Photograph of applicant with family/guardian
+
+## When is this due?
+
+August 1, 2024

@@ -1,0 +1,128 @@
+﻿Row,Duration (in seconds),Image,Narration/Audio,Visual,shot?
+1.1,6,,"“Hi, my name is Carl. I want to become a research scientist in emerging tech”",Laptop in front of Blue Screen.,No
+1—INTRO,,,,,No
+1.2,6,,,"Compilation of screenshots
+
+Pause. Dolly in. Speedy cuts of Carl’s adventures*.
+[PHOTOS in Notion]",No
+1.3,3,,“And one scholarship was all it took.”,Dolly out stops. Times Square continues playing.,No
+1.4,2,,“Who said that?,"Pan to left. ",No
+1.5 old (30 secs),0,,,,No
+2—History+BackendUpgrade,,,,,No
+2.1,10,,"[Open laptop]
+
+This is our solution.
+
+People have been visiting Padayon Ko since 2022 to apply for opportunities with step-by-step instructions.","Macbook minimize animation https://www.facebook.com/photo/?fbid=5275088032604532&set=pcb.5275122485934420
+
+Show PK Home page
+
+Slide in left as I walk in bluev- rounded rectangles 
+
+Vid rec of Padayon Ko recordings — from landscape to ‘right’
+
+Scroll through information",No
+,,,,,No
+2.2,8,,"Now, we use Gemini along with other APIs to automatically bring the information to them; where Filipinos are the most active — Facebook.","Carl Slide out left
+
+Left col
+1. check FB 
+2. sched →function (check notion)
+3. Parse page
+4. Generating caption with Gemini API (fancy text)
+
+Right Col
+5. Show facebook post
+
+_
+
+https://openurl.ebsco.com/EPDB%3Agcd%3A3%3A17024995/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A150690439&crl=c
+
+Cloud Scheduler → Cloud Function → Notion →  → Gemini → FB",No
+3.4,7,,But what I’m really excited` for are the AI tools to help you supercharge your scholarship applications,Scroll through First time setup,No
+3.2,14,,"First time?
+
+Our multilingual onboarding process—available in English, Cebuano, and Tagalog—gathers your information and creates an elevator pitch about your origin story.
+
+Essential for networking.","Card shuffle animation (left col)
+
+1. Welcome to Notion
+2. How does padayon ko help u(toggle cebuano) (show tagalog)
+3. Quick filling up animation of chilipepper
+
+1. English
+2. Cebuano Visayan
+3. Tagalog
+
+Quote elevator pitch",No
+3.3,9,,"But we don't stop there! 
+
+Gemini's embedding model also analyzes your profile to match you with  three scholarships and give you a headstart on  your journey.","<Carl view>
+
+Cuties converse? ",No
+3—PERSONALIZATION,,,,,No
+3.5,2,,"Let’s take a guided tour. ;) ","Change into safari guy clothes
+
+Circle head",No
+4-TOOLS,,,,,No
+4.1,12,,"First stop — Achievement Tracker
+
+Simply answer a few questions about your achievement — and then our AI transforms them into bullet points and descriptions ready to impress any scholarship committee.","Notion zoom-in screen recording
+
+
+
+Code Architecture",No
+4.2,11,,"Second — Foundational Essays.
+
+This section introduces you to 10 common application questions. Gemini will then help you write them without sounding  robotic, so don’t worry.",,No
+4.3,13,,"But what are they for?
+
+Meet Super Essays! 
+
+Gemini merges your foundational essays and achievements to generate new essays tailored to new application questions. 
+
+Copy paste - and focus on applying.","Scratch head? 
+
+",No
+4.4,18,,"Quick note: 
+1. You can either write or speak your input in any language. Thanks, speech-to-text via Google Chirp.
+2. From that input, we use the whole is greater than its parts approach by turning simple question answers into narratives for you to experience less cognitive load.
+3. And this is achieved by using comprehensive and modular AI prompts following Gemini’s guidelines.","Pause (bnw)
+
+Chirp logo
+
+show theperfectfunc()
+ <>
+ </>",No
+5—Practice,,,,,No
+5.1,13,,"Unfortunately, Filipino studying in publicly-funded schools don’t take the SATs by default. We even have to take English proficiency tests to be eligible for international scholarships.
+
+That is why we included practice bots in Padayon Ko.",Obvious wipe transition,No
+5.2,12,,"Meet MathyYou, our AI-powered Math Tutor. By converting abstract math questions into interest-aligned scenarios, MathyYou makes studying for the math section in the SAT engaging.",,No
+5.3,13,,"With a voice-only interface, Fluent upskills verbal communication with the option to focus on debating, storytelling, question-asking, or explanation. 
+
+After your conversation, Fluent gives you feedback. ",Overwatch wipe,No
+6—BIG PICTURE,,,,,No
+6.1,4,,"Now all you have to do is submit that application, keep track of it, and-",,No
+6.2,15,,"HAILING FROM THE PHILIPPINES
+
+OUR NOBEL PRIZE WINNER IS JUAN — THANK YOU FOR SOLVING WORLD HUNGER. ","LIGHTS ON
+
+Lights off fade to black
+
+Bow
+Bow
+Walk off set",No
+"6.3 ",5,,One scholarship win could be the start of something bigger.,"A scholarship doesnt just life families—it lifts the world. ",No
+6.4,2,,"""Padayon Ko” logo",Padayon Ko.,No
+1.5,18,,"“3.3 million high-school students in the Philippines give up college because they can’t afford it. What they do instead is look for a job to provide for their families.
+
+That is why I am using Google’s GEMINI API to build Padayon Ko, wc is a platform that helps students secure scholarships from start to finish.","Carl revealed in shock as he glances up from reading his script
+
+[walk to set]
+
+Feature research: 
+School dropouts in the Philippines: causes, changes and statistics
+http://portal.amelica.org/ameli/journal/725/7253717004/html/
+
+https://www.panaynews.net/k-12-blamed-for-high-dropout-rate-in-schools/",No
