@@ -2,18 +2,19 @@
 
 **Gathered**
 
-LinkedIn
+LinkedIn + all posts
 Medium
 GitHub Repos
 Resume/CV
 Features
 Facebook
+Youtube entries
 
 **Not Gathered**
 Notion
 Research Gate (google scholar)
-Youtube entries
 Minerva
+Somach
 
 <!-- from 103025_MIT_GatheringAchievements oct 31 2025 -->
 PROJ = project

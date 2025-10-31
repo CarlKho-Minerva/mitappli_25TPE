@@ -1,0 +1,2005 @@
+# Carl Kho's Capstone Project: Biosensors → Video Games
+# Complete Content Export for LLM Analysis
+# Generated: 2025-10-30T17:29:23.017Z
+#
+# This file contains all blog posts and pomodoro work sessions from my Fall 2025 capstone project
+# exploring biosensor-based game controllers.
+#
+# Repository: https://github.com/CarlKho-Minerva/md-capstonefall25_25TPE
+
+
+================================================================================
+
+# BLOG POSTS
+
+## Gaming's Next Controller Isn't a Brain Implant. It's Your Shin.
+**Date:** 2025-09-18
+**Type:** BLOG POST
+**Phase:** Phase 1 - Smartphone Motion Controller
+**Description:** Why my capstone project is starting with simple motion, and why you should be skeptical of 'mind control.'
+**Source File:** 01_shin-controller.md
+
+
+Think about your keyboard. Pressing 'A' is simple. But what about copying and pasting? It's now a tiny, precise dance your fingers have to do: Ctrl+A, Ctrl+C, Ctrl+V.
+
+What if you could replace that entire, multi-step dance with a single, expressive physical motion?
+
+What if, instead of doing the entire "ctrl" dance, you could just... jump? And then everything's copied and pasted?
+
+## The Hype vs. Reality
+
+Every few months, someone announces they've cracked "mind control" gaming. A new brain-computer interface that will let you play games with your thoughts alone. The demos are impressive, the headlines are exciting, and the reality is... usually disappointing.
+
+Don't get me wrong—brain-computer interfaces are incredible technology with legitimate medical applications. But for gaming? We're getting ahead of ourselves.
+
+## Starting Simple: The Smartphone Controller
+
+My capstone project takes a different approach. Instead of jumping straight to the "holy grail" of brain control, I'm starting with something much more mundane: your smartphone's motion sensors.
+
+> [!NOTE]
+> Learn to walk before you try to fly. A working motion controller teaches you more about game integration than a broken brain interface.
+
+Phase 1 of my project transforms a standard Android phone into a wireless motion controller for *Hollow Knight: Silksong*. You walk in place to move, jump to jump, and punch to attack. It's not glamorous, but it works—and that's the point.
+
+:::loom url="https://www.loom.com/embed/727b750b191f4f1abde98fd024e2e8de" title="Silksong Demo - Body Controller (Android → UDP → Pynput)"
+
+### Why Motion First?
+
+Motion sensors give you clean, reliable data. When you tilt your phone, the accelerometer responds predictably. When you rotate it, the gyroscope provides precise angular velocity. This consistency lets you focus on the harder problems:
+
+- How do you translate physical movements into game commands?
+- How do you calibrate for different users and playing styles?
+- How do you make the experience feel natural and responsive?
+
+These are the same challenges you'll face with any biosensor, including brain interfaces. But with motion data, you can actually solve them.
+
+## The Path to Brain Control
+
+This isn't about dismissing brain-computer interfaces. I'm just building towards them systematically. My project follows a 5-phase progression:
+
+1. **Smartphone motion** (clean, reliable signals)
+2. **Smartwatch integration** (multi-device coordination)
+3. **EMG muscle sensors** (noisy biological signals)
+4. **EEG brain activity** (extremely noisy, limited bandwidth)
+5. **Multimodal fusion** (combining everything that works)
+
+Each phase teaches lessons that inform the next. By the time I reach brain interfaces in Phase 4, I'll have solved data processing, calibration, and user experience with cleaner signals first.
+
+## Why Your Shin Matters
+
+The title isn't just provocative—it's practical. Your shin bone provides excellent impact detection when you stomp or march in place. It's a reliable, accessible input that doesn't require fancy hardware or complex signal processing.
+
+More importantly, it works. A working shin controller teaches you more about game integration than a broken brain interface ever will.
+
+## Lessons from Real Users
+
+I've already tested early prototypes with friends and classmates. The feedback is consistent: they care less about the technology and more about whether it's fun. A simple, responsive motion controller beats a complex brain interface that only works 60% of the time.
+
+> The best interface is the one you don't think about.
+>
+> — Reminds me of *Don't Make Me Think* by Steve Krug, ironically.
+
+## The Long Game
+
+Will I eventually build a brain-controlled game system? Probably. Will it be the primary input method? Probably not. The future of alternative game controllers isn't about replacing traditional inputs—it's about augmenting them intelligently.
+
+A hybrid system that combines reliable motion sensing with selective brain commands could offer the best of both worlds: the precision of physical input with the magic of thought control for specific actions.
+
+## Building Something Real
+
+This project isn't about chasing headlines or promising impossible futures. It's about building something that actually works, learning from real users, and progressing systematically toward more ambitious goals.
+
+Sometimes the most revolutionary approach is to start with the obvious solution and execute it extremely well.
+
+Your shin might not be the future of gaming, but it's an excellent place to start building it.
+
+Feel free to contact me at kho@uni.minerva.edu if you have questions or thoughts about this approach.
+
+
+================================================================================
+
+## Phase 1 Technical Log - Building the Smartphone Motion Controller
+**Date:** 2025-09-20
+**Type:** TECHNICAL LOG
+**Phase:** Phase 1 - Smartphone Motion Controller
+**Description:** Complete technical documentation and code for the smartphone-based motion controller implementation.
+**Source File:** 05_phase1-technical-log.md
+
+
+Abandoning assumptions for empirical truth in motion controller design.
+
+> [!WARNING]
+> **PHASE 1 TECHNICAL DOCUMENTATION**
+> This technical blog documents the engineering journey for **Phase 1** of the Silksong Motion Controller project. The learnings and principles documented here form the foundation for subsequent phases and iterations.
+
+:::loom url="https://www.loom.com/embed/4a5a69b3820846b7800a381407183ba5" title="Tilt UDP - Early Phase 1 Demo"
+
+:::loom url="https://www.loom.com/embed/52ec8495dde74669bcdd9998db55e3fc" title="Walk Multithread - Threading Implementation"
+
+:::loom url="https://www.loom.com/embed/24bf5e5834ae4b818021e7375de44549" title="Punch, Walk, and Jump like Toph Beifong"
+
+:::loom url="https://www.loom.com/embed/727b750b191f4f1abde98fd024e2e8de" title="Silksong Demo - Body Controller (Android → UDP → Pynput)"
+
+## Entry 01: The Foundational Pivot
+
+**DATE:** September 17, 2025 | **SUBJECT:** Abandoning Assumptions for Empirical Truth
+
+The V2 project did not begin with a line of code, but with a post-mortem of V1. Technically, V1 "worked," but in practice, it was a failure. Its logic was a brittle, precarious tower of assumptions—a cascade of `if-then` statements built on what I, the developer, *thought* a punch or a jump should look like in the sensor data.
+
+The result was a controller defined by a single, damning word: **"janky."**
+
+The intense journaling begins here, with the first and most critical technical lesson of this entire endeavor: the complete and total abandonment of assumption-based design.
+
+Research into [systems design anti-patterns](https://en.wikipedia.org/wiki/Anti-pattern) gave our problem a technical name: a system of **"magic numbers."** Our thresholds were arbitrary values pulled from thin air:
+
+```python
+if acceleration > 15.0:  # Why 15.0? Who knows!
+    trigger_punch()
+```
+
+Diving into [game feel design principles](https://www.gamedeveloper.com/design/game-feel-a-game-designer-s-guide-to-virtual-sensation) clarified the issue: "jank" is what happens when a player's physical intuition (their proprioception) does not match the system's response.
+
+Reading [data-driven development methodologies](https://martinfowler.com/articles/data-driven.html) established the foundational principle of V2: **"We don't guess, we measure."**
+
+> [!NOTE]
+> **Principle #1: The Data Dictates the Design.**
+> I would become an observer first and engineer second. I would build tools to see, and only then, build logic based on what I saw.
+
+The [Android Sensor Overview documentation](https://developer.android.com/guide/topics/sensors/sensors_overview) introduced the critical distinction between **base sensors** and **composite sensors**. The `Sensor.TYPE_STEP_DETECTOR` runs a hardware-accelerated algorithm that has already done empirical analysis *for us*.
+
+```kotlin
+// Base sensor - raw data
+Sensor.TYPE_ACCELEROMETER
+
+// Composite sensor - processed intelligence
+Sensor.TYPE_STEP_DETECTOR  // "triggers an event each time the user takes a step"
+```
+
+## Entry 02: Isolate to Iterate
+
+**DATE:** September 17, 2025 | **SUBJECT:** The UDP Bridge and the Power of a Minimal Test
+
+Following [modular programming principles](https://en.wikipedia.org/wiki/Modular_programming), I learned that complex systems are composed of multiple, independent subsystems. If I build everything at once and it fails, I have no way of knowing where the failure lies.
+
+Our first subsystem was the most fundamental: can the phone and computer communicate at all?
+
+This led to the "UDP Ping" test. The plan was a model of minimalism:
+
+### The Server (udp_listener.py)
+
+```python
+import socket
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.bind(("0.0.0.0", 12345))  # Listen on all interfaces
+
+while True:
+    data, addr = sock.recvfrom(1024)
+    print(f"Received: {data} from {addr}")
+```
+
+### The Client (Android App)
+
+```kotlin
+// Critical: AndroidManifest.xml
+<uses-permission android:name="android.permission.INTERNET" />
+
+// Button click handler
+button.setOnClickListener {
+    lifecycleScope.launch(Dispatchers.IO) {
+        val socket = DatagramSocket()
+        val message = "Hello, Mac!".toByteArray()
+        val packet = DatagramPacket(message, message.size,
+                    InetAddress.getByName("192.168.1.100"), 12345)
+        socket.send(packet)
+        socket.close()
+    }
+}
+```
+
+When `"Hello, Mac!"` appeared in the terminal, it proved several things simultaneously: Wi-Fi connectivity, firewall configuration, IP addressing, and basic networking code on both sides.
+
+**Key Research:** [Python socket programming](https://docs.python.org/3/library/socket.html), [Android DatagramSocket documentation](https://developer.android.com/reference/java/net/DatagramSocket), [UDP networking fundamentals](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+
+> [!TIP]
+> **Principle #2: Verify Each Layer Before Building the Next.**
+> By creating the simplest possible test case for each subsystem, I drastically reduce the debugging search space.
+
+## Entry 03: The Sensor-to-JSON Pipeline
+
+**DATE:** September 17, 2025 | **SUBJECT:** Structuring Data and Asynchronous Events
+
+After researching [network communication protocols](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview), I decided that all communication would be in **JSON**. This was a non-negotiable architectural choice:
+
+```kotlin
+// Android: Sensor event to JSON
+override fun onSensorChanged(event: SensorEvent?) {
+    event?.let {
+        val jsonObject = JSONObject().apply {
+            put("sensor", "rotation_vector")
+            put("timestamp", System.currentTimeMillis())
+            put("values", JSONArray(it.values))
+        }
+        sendUDPMessage(jsonObject.toString())
+    }
+}
+```
+
+The [Android SensorEventListener documentation](https://developer.android.com/reference/android/hardware/SensorEventListener) outlined the asynchronous, event-driven sensor pattern:
+
+```kotlin
+// 1. Get the sensor
+val sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
+
+// 2. Register listener (asynchronous subscription)
+sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME)
+
+// 3. Receive events (callback-driven)
+override fun onSensorChanged(event: SensorEvent?) {
+    // Process data here
+}
+
+// 4. CRITICAL: Unregister to prevent battery drain
+sensorManager.unregisterListener(this)
+```
+
+> [!SUCCESS]
+> **Principle #3: Structure is Freedom.**
+> By enforcing JSON from the beginning, I freed ourselves from future parsing headaches. Every packet is self-describing.
+
+## Entry 04: From Snapshot to Stream
+
+**DATE:** September 17, 2025 | **SUBJECT:** State Management and the Introduction of Concurrency
+
+Moving from a single button press to continuous streaming introduced **state management** and **concurrency**. The Android app was upgraded to use a `Switch` tied to the sensor lifecycle:
+
+```kotlin
+// UI state drives sensor lifecycle
+streamingSwitch.setOnCheckedChangeListener { _, isChecked ->
+    if (isChecked) {
+        startStreaming()  // registerListener()
+    } else {
+        stopStreaming()   // unregisterListener()
+    }
+}
+
+// CRITICAL: Android Activity Lifecycle
+override fun onPause() {
+    super.onPause()
+    stopStreaming()  // Prevent background battery drain
+}
+```
+
+On the Python side, the `SENSOR_DELAY_GAME` setting aims for ~50Hz. I implemented a **performance monitor** based on [network performance monitoring patterns](https://en.wikipedia.org/wiki/Network_monitoring):
+
+```python
+import time
+
+packet_count = 0
+last_time = time.time()
+
+while True:
+    data, addr = sock.recvfrom(1024)
+    packet_count += 1
+
+    if time.time() - last_time >= 1.0:
+        print(f"Rate: {packet_count} packets/sec")
+        packet_count = 0
+        last_time = time.time()
+```
+
+> [!INFO]
+> **Principle #4: A Stream is a Living Thing; Measure its Health.**
+> A continuous data stream's health is defined by metrics like rate, latency, and jitter. Build diagnostic tools first.
+
+## Entry 05: Closing the Loop
+
+**DATE:** September 17, 2025 | **SUBJECT:** State Machines, pynput, and the First Taste of Control
+
+This marks where I evolved from passive listener to active **controller**. I needed a cross-platform keyboard library that could programmatically send keystrokes. After evaluating options, I chose `pynput` over alternatives like `keyboard` or `pyautogui` because:
+
+- **Cross-platform compatibility**: Works identically on Windows, macOS, and Linux
+- **Low-level access**: Direct OS-level keyboard events, not just GUI automation
+- **Thread-safe**: Can be called from background threads without issues
+- **Minimal dependencies**: Doesn't require heavy GUI frameworks
+
+Research into [IMU coordinate frame transformations](https://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToEuler/) led me to implement quaternion-to-roll conversion. The Android `ROTATION_VECTOR` sensor outputs quaternions, but I needed Euler angles for intuitive tilt detection:
+
+```python
+import math
+
+def quaternion_to_roll(x, y, z, w):
+    # Standard quaternion to Euler angle conversion
+    roll = math.atan2(2*(w*x + y*z), 1 - 2*(x*x + y*y))
+    return math.degrees(roll)
+```
+
+Studying [finite state machine design patterns](https://refactoring.guru/design-patterns/state), I designed our first **FSM**:
+
+```python
+from pynput import keyboard
+
+current_key_pressed = None
+
+def update_movement(roll_angle):
+    desired_state = None
+
+    if roll_angle > 15:
+        desired_state = 'TILT_RIGHT'
+    elif roll_angle < -15:
+        desired_state = 'TILT_LEFT'
+    else:
+        desired_state = 'CENTERED'
+
+    # Only act on state CHANGES
+    if desired_state == 'TILT_RIGHT' and current_key_pressed != 'd':
+        release_all_keys()
+        keyboard.press('d')
+        current_key_pressed = 'd'
+```
+
+> [!TIP]
+> **Principle #5: Don't Act, Change State.**
+> A real-time controller should think in terms of continuous states, not discrete actions. Actions are side effects of state transitions.
+
+## Entry 06: The OS is a Gatekeeper
+
+**DATE:** September 17, 2025 | **SUBJECT:** Permissions, False Negatives, and UI Diagnostics
+
+Integrating the `Step Detector` led to our first major, silent failure. Digging through the [Android permissions documentation](https://developer.android.com/guide/topics/permissions/overview) revealed the culprit: the Android permission system.
+
+As of Android 10, accessing activity sensors requires the "dangerous" `android.permission.ACTIVITY_RECOGNITION` permission:
+
+```kotlin
+// AndroidManifest.xml
+<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+// Runtime permission request pattern
+private fun requestActivityPermission() {
+    if (ContextCompat.checkSelfPermission(this,
+        Manifest.permission.ACTIVITY_RECOGNITION) != PackageManager.PERMISSION_GRANTED) {
+
+        requestPermissions(arrayOf(Manifest.permission.ACTIVITY_RECOGNITION),
+                          REQUEST_ACTIVITY_PERMISSION)
+    }
+}
+
+override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
+                                       grantResults: IntArray) {
+    when (requestCode) {
+        REQUEST_ACTIVITY_PERMISSION -> {
+            if (grantResults.isNotEmpty() &&
+                grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, start sensor
+                registerStepDetector()
+            } else {
+                // Permission denied, show error
+                showPermissionError()
+            }
+        }
+    }
+}
+```
+
+> [!DANGER]
+> **Principle #6: The OS is Not Your Friend; It is a Gatekeeper.**
+> Never assume you have access to a resource. Always check for permissions explicitly.
+
+> [!WARNING]
+> **Principle #7: A Silent UI is a Useless UI.**
+> During development, the UI's most important job is diagnostic feedback about internal state.
+
+## Entry 07: Multithreaded Walking
+
+**DATE:** September 17, 2025 | **SUBJECT:** Graduating from Events to Behaviors
+
+Translating discrete `step` events into continuous `WALKING` action required our first foray into **multithreading**. The Python script's main loop is single-threaded and blocking.
+
+After studying [Python threading documentation](https://docs.python.org/3/library/threading.html) and [concurrent programming patterns](https://realpython.com/intro-to-python-threading/), I designed a concurrent solution:
+
+```python
+import threading
+import time
+
+# Thread communication
+stop_walking_event = threading.Event()
+walking_thread = None
+is_walking = False
+
+def walker_thread_func():
+    """Worker thread: Execute walking behavior"""
+    keyboard.press('w')
+    stop_walking_event.wait()  # Block until signaled
+    keyboard.release('w')
+
+# Main thread: Perception and state management
+def handle_step_event():
+    global walking_thread, is_walking, last_step_time
+
+    last_step_time = time.time()
+
+    if not is_walking and walking_thread is None:
+        # Start new walking thread
+        stop_walking_event.clear()
+        walking_thread = threading.Thread(target=walker_thread_func)
+        walking_thread.start()
+        is_walking = True
+
+# Inactivity timer (main loop)
+if is_walking and time.time() - last_step_time > WALK_TIMEOUT:
+    stop_walking_event.set()    # Signal worker to stop
+    walking_thread.join()       # Wait for completion
+    walking_thread = None
+    is_walking = False
+```
+
+> [!SUCCESS]
+> **Principle #8: Separate Perception from Action.**
+> Main thread perceives (listens for packets), worker threads act (execute behaviors). This concurrent model enables responsive, non-blocking behavior.
+
+**Key Learning Resources:** [Thread synchronization patterns](https://realpython.com/intro-to-python-threading/#using-a-threadpooleexecutor), [Producer-consumer problem solutions](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem), [Event-driven programming with threading.Event](https://docs.python.org/3/library/threading.html#threading.Event)
+
+## Entry 08: The Calibrator's Crucible
+
+**DATE:** September 17, 2025 | **SUBJECT:** Moving from Developer Tool to User Product
+
+The `config.json` file was functional for me, the developer, but unusable for anyone else. The calibrator transformed the project from a personal hack into a distributable product.
+
+Researching [experimental design methodologies](https://en.wikipedia.org/wiki/Design_of_experiments) and [statistical sampling techniques](https://en.wikipedia.org/wiki/Sampling_(statistics)), I developed the blueprint: **prompt, record, analyze, save.**
+
+```python
+import statistics
+import json
+import time
+
+def calibrate_gesture(gesture_name, duration=3.0):
+    print(f"\nCalibrating {gesture_name}...")
+    input("Press [Enter] when ready, then perform the gesture:")
+
+    # Time-based recording window
+    start_time = time.time()
+    samples = []
+
+    while time.time() - start_time < duration:
+        try:
+            data, addr = sock.recvfrom(1024)
+            json_data = json.loads(data.decode())
+
+            if json_data['sensor'] == 'linear_acceleration':
+                # Extract feature: vector magnitude
+                values = json_data['values']
+                magnitude = math.sqrt(values[0]**2 + values[1]**2 + values[2]**2)
+                samples.append(magnitude)
+
+        except BlockingIOError:
+            continue  # Non-blocking socket
+
+    # Statistical analysis
+    peak_values = find_peaks(samples)  # Custom peak detection
+    mean_peak = statistics.mean(peak_values)
+    std_peak = statistics.stdev(peak_values)
+
+    # Threshold calculation
+    threshold = mean_peak - (1.5 * std_peak)
+
+    print(f"Calculated threshold: {threshold:.2f}")
+    return threshold
+```
+
+> [!NOTE]
+> **Principle #9: Configuration is a Contract; Calibration is the Negotiation.**
+> A calibration tool guides the user to negotiate the terms of the system's behavioral contract.
+
+**Essential Research:** [Statistical thresholding techniques](https://en.wikipedia.org/wiki/Thresholding_(image_processing)), [Peak detection algorithms](https://scipy-lectures.org/intro/scipy/auto_examples/plot_optimize_example2.html), [Signal-to-noise ratio optimization](https://en.wikipedia.org/wiki/Signal-to-noise_ratio)
+
+## Entry 09: World-Coordinate Transformation
+
+**DATE:** September 17, 2025 | **SUBJECT:** The Final Technical Breakthrough
+
+The final leap was solving grip-dependency. The calibrator worked, but only if the user held the phone in the exact same orientation during gameplay.
+
+Deep-diving into [IMU coordinate systems](https://developer.android.com/guide/topics/sensors/sensors_overview#sensors-coords) and [3D rotation mathematics](https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation), I implemented world-coordinate transformation using quaternion mathematics:
+
+```python
+def rotate_vector_by_quaternion(vector, quaternion):
+    """
+    Transform device-relative vector to world-relative vector
+    Using quaternion rotation: v' = q ⊗ v ⊗ q*
+    """
+    x, y, z = vector
+    qx, qy, qz, qw = quaternion
+
+    # Convert vector to quaternion (w=0)
+    v_quat = [0, x, y, z]
+
+    # Quaternion conjugate
+    q_conj = [-qx, -qy, -qz, qw]
+
+    # Perform rotation: q ⊗ v ⊗ q*
+    temp = quaternion_multiply(quaternion, v_quat)
+    result = quaternion_multiply(temp, q_conj)
+
+    return result[1:4]  # Extract xyz components
+```
+
+The result: a jump is now *always* a spike on the world's vertical (Z) axis, regardless of how the phone is held.
+
+> [!SUCCESS]
+> **Principle #10: Separate Motion from Orientation.**
+> Transform device-relative motion into world-relative coordinates for orientation-invariant gesture detection.
+
+## Entry 10: The Unseen Engineer
+
+**DATE:** September 17, 2025 | **SUBJECT:** Signal Processing as the Foundation of "Feel"
+
+This project was framed as software engineering, but every major breakthrough was fundamentally an exercise in **applied signal processing**. The "feel" of the final controller is a direct result of the layers of processing I applied to tame the noisy sensor signal.
+
+### Key Signal Processing Techniques
+
+**1. Feature Extraction:**
+
+```python
+# Peak Finding - extract maximum value in time window
+def find_peaks(signal, window_size=10):
+    peaks = []
+    for i in range(window_size, len(signal) - window_size):
+        if signal[i] == max(signal[i-window_size:i+window_size]):
+            peaks.append(signal[i])
+    return peaks
+
+# Vector Magnitude - collapse 3D to 1D
+magnitude = math.sqrt(x**2 + y**2 + z**2)
+```
+
+**2. Hardware/Firmware Filtering:**
+
+```kotlin
+// Trust device's built-in filtering
+Sensor.TYPE_LINEAR_ACCELERATION  // Gravity already removed
+Sensor.TYPE_STEP_DETECTOR        // Gait pattern already detected
+```
+
+**3. Software Filtering (Debouncing):**
+
+```python
+# Low-pass filter: ignore high-frequency noise
+STEP_DEBOUNCE = 0.3   # Refractory period
+WALK_TIMEOUT = 2.0    # Hysteresis for state changes
+
+if time.time() - last_step_time > STEP_DEBOUNCE:
+    # Valid signal, process it
+    process_step()
+```
+
+> [!TIP]
+> **Principle #11: Good Control is Good Signal Processing.**
+> A responsive controller is sculpted by intelligently filtering and transforming noisy signals to reflect user intent, not sensor chaos.
+
+**Advanced Topics:** [Digital signal processing fundamentals](https://en.wikipedia.org/wiki/Digital_signal_processing), [Kalman filtering for sensor fusion](https://en.wikipedia.org/wiki/Kalman_filter), [Real-time signal processing in embedded systems](https://www.dspguide.com/)
+
+## Phase 1: Engineering Principles Summary
+
+This technical journey through Phase 1 of the Silksong motion controller revealed 11 fundamental engineering principles:
+
+```python
+# The 11 Engineering Principles of Phase 1
+01.  The Data Dictates the Design
+02.  Verify Each Layer Before Building the Next
+03.  Structure is Freedom (JSON over raw strings)
+04.  A Stream is a Living Thing; Measure its Health
+05.  Don't Act, Change State
+06.  The OS is Not Your Friend; It is a Gatekeeper
+07.  A Silent UI is a Useless UI
+08.  Separate Perception from Action
+09.  Configuration is a Contract; Calibration is the Negotiation
+10.  Separate Motion from Orientation
+11.  Good Control is Good Signal Processing
+```
+
+The V1 prototype was a clever hack; the V2 controller is an engineered system. This Phase 1 foundation enables future iterations and expansions while maintaining the core principle: **we don't guess, we measure.**
+
+:::github url="<https://github.com/CarlKho-Minerva/v2_SilksongController_25TPE>" title="Complete Phase 1 Project Repository"
+
+---
+
+## End of Phase 1 Technical Documentation
+
+DOCUMENTED: SEPTEMBER 19, 2025
+
+
+================================================================================
+
+## The Ghost in the Machine Was Always a Network
+**Date:** 2025-09-29
+**Type:** BLOG POST
+**Phase:** Learning Phase
+**Description:** Personal reflections on discovering the deep history of connectionism through Rumelhart & McClelland's foundational work—and why modern AI hype misses the point entirely.
+**Source File:** 07_connectionism-revelations.md
+
+
+## Why everything I thought I knew about neural networks was backwards
+
+I just spent the morning diving deep into [Rumelhart and McClelland's *Parallel Distributed Processing*](https://books.google.com/books?id=eFPqqMBK-p8C), and I'm having one of those uncomfortable moments where you realize everything you thought you understood was built on quicksand.
+
+Everyone talks about [neural networks](https://www.nature.com/articles/nature14539) like they're this bleeding-edge technology that emerged from Silicon Valley in the last decade. But here I am, staring at research from 1986 that describes [processing units](https://www.cs.toronto.edu/~hinton/absps/naturebp.pdf), [activation states](https://proceedings.neurips.cc/paper_files/paper/1989/file/53c3bce66e43be4f209556518c2fcb54-Paper.pdf), and [distributed representations](http://www.cs.toronto.edu/~fritz/absps/ieee-lre.pdf) with a clarity that makes most modern AI explanations look like marketing fluff.
+
+## The Moment It Clicked
+
+There was this exact moment when the pieces fell into place. I was trying to wrap my head around what Rumelhart means by "processing units," and suddenly I realized: **these aren't abstract mathematical constructs. They're literally [neurons](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(01)01686-9).**
+
+> [!NOTE] Personal Revelation
+> "Linking 'processing units' to the neurons in a [multi-layer perceptron](https://www.nature.com/articles/323533a0), like the ones from [3Blue1Brown's gradient descent videos](https://www.3blue1brown.com/lessons/gradient-descent), is exactly the right intuition."
+
+That connection hit different. Because what Rumelhart is describing isn't some novel computational architecture—it's a formal mathematical framework for understanding how [biological neural networks](https://www.nature.com/articles/nn1200) actually work. The "artificial" neural networks we obsess over today? They're just simplified mathematical models of what our brains have been doing for millions of years.
+
+## The Ahistorical Hype Machine
+
+This is what drives me crazy about the current AI discourse. We've got venture capitalists breathlessly announcing "breakthroughs" in neural architecture, when the fundamental insights were locked down before I was born. The core concepts—[distributed processing](https://www.cs.cmu.edu/~dst/pubs/simon-dist-proc-1962.pdf), [parallel computation](https://dl.acm.org/doi/10.1145/1113316.1113328), emergent behavior from simple units—these weren't discovered at [OpenAI](https://openai.com/) or [DeepMind](https://www.deepmind.com/). They were worked out by [cognitive scientists](https://psycnet.apa.org/record/1988-98016-000) in university labs decades ago.
+
+The real innovation here isn't the technology—it's that we finally have enough computational power to actually implement these ideas at scale. But somehow we've convinced ourselves that throwing more [TPUs](https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning) at 40-year-old algorithms makes us pioneers.
+
+## What Processing Units Actually Are
+
+Let me break this down in concrete terms, because the academic language obscures how elegant this really is.
+
+A processing unit is just a variable that holds a value. That's it. But when you connect thousands of these variables together, each one influencing the others according to simple mathematical rules, something profound emerges. The network starts to exhibit behaviors that none of the individual units were programmed to produce.
+
+Think about [pixels on a screen](https://www.nature.com/articles/scientificamerican0991-80). Each pixel just holds a color value—there's no intelligence there. But arrange enough pixels in the right pattern, and you get an image that can make you laugh or cry. Processing units work the same way, except instead of representing visual information, they can represent concepts, memories, decisions—anything that can be encoded as a pattern of activation.
+
+This reminds me of [Braitenberg vehicles](http://people.cs.uchicago.edu/~ravenben/classes/253/assignments/assignment3/braitenberg_vehicles.pdf)—those simple robotic constructs that exhibit seemingly complex behaviors through the interaction of basic components. What looks like intentional behavior emerges from simple rules and connections, just like in neural networks.
+
+## The State of Activation: A Network's Thoughts
+
+Here's where it gets really interesting. At any given moment, the entire network has what Rumelhart calls a "[state of activation](https://www.researchgate.net/publication/265505443_The_Concept_of_Activation_in_Cognitive_Science)"—essentially a snapshot of every processing unit's current value. This isn't static. It's constantly evolving as information flows through the network, with each unit adjusting its activation based on signals from its neighbors.
+
+This is how the network "thinks"—not through sequential logical operations like a traditional computer, but through the dynamic evolution of these [activation patterns](https://www.nature.com/articl
+es/nn1584). The network doesn't store memories in specific locations; memories emerge from the interactions between units. It doesn't follow programmed rules; behavior emerges from the statistical regularities in how activation patterns change over time.
+
+## The Eight Foundations: Getting My Hands Dirty
+
+Let me walk you through the eight core aspects of any PDP model, using a concrete example that's been rattling around in my head: **How does a network learn that "apple" should activate "red"?**
+
+### 1. A Set of Processing Units
+
+**The Foundation**: Every network starts with units—simple processors that hold activation values.
+
+**Apple → Red Example**: Let's say we have three units:
+
+- Unit A (representing "apple"): $a_A = 0.0$
+- Unit R (representing "red"): $a_R = 0.0$
+- Unit G (representing "green"): $a_G = 0.0$
+
+Each unit can hold an activation value between 0 (completely inactive) and 1 (fully active). Right now, our network is blank—no knowledge, no associations.
+
+### 2. A State of Activation
+
+**The Foundation**: At any moment, the network's "thought" is captured by the activation values of all units simultaneously.
+
+**Apple → Red Example**: When we present the word "apple" to our network:
+$$\text{Network State} = \{a_A = 0.8, a_R = 0.1, a_G = 0.3\}$$
+
+This vector represents the network's current "understanding." The apple unit is highly active (0.8), but red and green are weakly activated. The network hasn't learned the association yet.
+
+### 3. An Output Function
+
+**The Foundation**: Each unit transforms its internal activation into an output signal sent to other units.
+
+**Apple → Red Example**: Using a sigmoid output function:
+$$o_i = \frac{1}{1 + e^{-a_i}}$$
+
+Our apple unit with activation $a_A = 0.8$ produces output:
+$$o_A = \frac{1}{1 + e^{-0.8}} = 0.69$$
+
+This output becomes the signal that flows to connected units.
+
+### 4. A Pattern of Connectivity
+
+**The Foundation**: Units are connected by weighted links that determine how strongly one unit influences another.
+
+**Apple → Red Example**: We need connection weights between units:
+
+- $w_{AR}$ = 0.2 (apple to red connection, initially weak)
+- $w_{AG}$ = 0.1 (apple to green connection, even weaker)
+
+These weights encode the network's learned associations. A weight of 0.2 means the apple unit has a moderate positive influence on the red unit.
+
+### 5. A Propagation Rule
+
+**The Foundation**: This determines how activation spreads through the network from unit to unit.
+
+**Apple → Red Example**: The input to the red unit comes from the apple unit:
+$$\text{net}_R = w_{AR} \times o_A = 0.2 \times 0.69 = 0.138$$
+
+This is the "message" the red unit receives from the apple unit through their connection.
+
+### 6. An Activation Rule
+
+**The Foundation**: Each unit combines all its inputs to update its activation level.
+
+**Apple → Red Example**: The red unit updates its activation:
+$$a_R^{new} = f(\text{net}_R) = \tanh(0.138) = 0.137$$
+
+Using a hyperbolic tangent function, the red unit's activation increases from 0.0 to 0.137—it's starting to "think" about red when it sees apple.
+
+### 7. A Learning Rule
+
+**The Foundation**: The network adjusts connection weights based on experience to improve its performance.
+
+**Apple → Red Example**: When we tell the network that "apple should strongly activate red," we use the delta rule:
+$$\Delta w_{AR} = \eta \times (t_R - a_R) \times o_A$$
+
+Where:
+
+- $\eta = 0.1$ (learning rate)
+- $t_R = 0.9$ (target activation for red)
+- $a_R = 0.137$ (actual activation)
+
+$$\Delta w_{AR} = 0.1 \times (0.9 - 0.137) \times 0.69 = 0.053$$
+
+The new weight becomes: $w_{AR} = 0.2 + 0.053 = 0.253$
+
+### 8. An Environment
+
+**The Foundation**: The network learns from patterns in its environment—the input patterns and teaching signals it receives.
+
+**Apple → Red Example**: Our training environment consists of examples:
+
+- "apple" → target: red=0.9, green=0.2
+- "grass" → target: red=0.1, green=0.9
+- "fire" → target: red=1.0, green=0.0
+
+After 1000 training examples with various apple-red pairings, our connection weight might evolve:
+$$w_{AR}: 0.2 \rightarrow 0.253 \rightarrow 0.31 \rightarrow \ldots \rightarrow 0.847$$
+
+Now when we present "apple" ($a_A = 0.8$):
+$$\text{net}_R = 0.847 \times 0.69 = 0.584$$
+$$a_R = \tanh(0.584) = 0.524$$
+
+The network has learned! Apple now reliably activates red.
+
+## The Emergent Dance
+
+What's beautiful about this is that we never programmed the rule "apples are red." We just showed the network examples, and through the mathematical interaction of these eight principles, the association emerged from the statistics of experience.
+
+This is what Rumelhart meant by "[emergent properties](https://www.nature.com/articles/nn1704)"—the network's behavior arises from the collective dynamics of simple mathematical operations, not from explicit programming.
+
+## Why This Matters for Understanding Intelligence
+
+What struck me most about studying this work is how it completely reframes what we mean by "[artificial intelligence](https://www.cs.dartmouth.edu/~mccreary/literature/breazeal-brooks-gray-hoffman-kidd-lee-lieberman-lockerd-chilongo-2004.pdf)." We're not building artificial brains—we're building mathematical models that capture some of the statistical properties of how real brains process information.
+
+The "intelligence" isn't in the individual processing units. It's not even in the connections between them. It emerges from the dynamic interaction between thousands of simple elements following basic mathematical rules. Intelligence is a [network effect](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002055).
+
+This has profound implications for how we think about [consciousness](https://www.nature.com/articles/nn.4091), [creativity](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(14)00087-7), and what it means to be human. If our own thoughts are just patterns of activation flowing through biological neural networks, then the boundary between "natural" and "artificial" intelligence becomes much fuzzier.
+
+But here's where I get skeptical. The current hype around "AGI" and "superintelligence" completely misses this point. We're not building digital gods—we're building very sophisticated pattern-matching machines that happen to use mathematical principles our brains discovered millions of years ago.
+
+## The Human Cost of Progress
+
+What the breathless tech reporting never mentions is the decades of painstaking research that made any of this possible. Real people—[cognitive scientists](https://psycnet.apa.org/record/1993-97959-000), [neuroscientists](https://www.nature.com/articles/nn1704), [mathematicians](https://www.jstor.org/stable/2308946)—spent their careers working out these fundamental principles. They published papers that barely anyone read, gave talks to half-empty conference rooms, and slowly built up our understanding of how networks of simple processing elements could give rise to complex behavior.
+
+The current AI boom isn't just built on their mathematical insights. It's built on their intellectual courage to pursue ideas that seemed impossible at the time. And yet somehow, we've convinced ourselves that the breakthrough happened when someone figured out how to run their equations on really big computers.
+
+## Looking Forward, Learning Backward
+
+I'm only partway through the first volume of [Rumelhart and McClelland's work](https://books.google.com/books?id=eFPqqMBK-p8C), but it's already clear that understanding modern AI requires going backward. The foundational concepts haven't changed—we've just gotten better at implementing them.
+
+The real questions aren't about the latest [transformer architecture](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) or the newest [training algorithm](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf). They're the same questions researchers were asking in 1986: How do networks of simple elements give rise to complex behavior? What does it mean for intelligence to be [distributed](https://www.sciencedirect.com/science/article/abs/pii/S0022249684710075) rather than centralized? How can we build systems that [learn from experience](https://link.springer.com/book/10.1007/978-0-387-45528-0) rather than following pre-programmed rules?
+
+These aren't just technical questions. They're philosophical ones, with implications for how we understand ourselves and our place in a world increasingly shaped by artificial intelligence.
+
+And this is where my work in biosensors comes full circle. The same mathematical principles that govern artificial neural networks also govern how our muscles, our brains, and our entire nervous system processes information. Understanding connectionism isn't just about building better AI—it's about building better interfaces between humans and machines. Because at the end of the day, we're all just biological neural networks trying to talk to artificial ones.
+
+---
+
+*This is part of my ongoing exploration of [computational neuroscience](https://www.nature.com/articles/nn1008) and AI history. I'm working through the foundational literature to understand how we got here—and where we might be going. My real interest is in bridging the gap between biological and artificial neural networks, particularly through biosensor interfaces that let humans and machines communicate in more natural ways.*
+
+
+================================================================================
+
+## Teaching Machines to Think: The Deep Q-Learning Revolution
+**Date:** 2025-10-06
+**Type:** TECHNICAL EXPLORATION
+**Phase:** Side Quest - Machine Learning Fundamentals
+**Description:** Breaking down how Google DeepMind taught an AI to master Atari Breakout without knowing what a ball is—and why the engineering tricks that made it stable are more impressive than the game itself.
+**Source File:** 08_dqn-breakout-revelation.md
+
+
+When an AI discovers strategy through pure trial and error, it reveals something profound about learning itself.
+
+:::loom url="https://www.loom.com/embed/79c73c67826649afb0ece213df0f998a" title="Deep Q-Learning: Teaching Machines Through Failure"
+:::
+
+## The Feynman Method Applied to Neural Networks
+
+I found myself at 11:39 PM, deep in the rabbit hole of reinforcement learning, staring at [Dilith Jayakody's breakdown of Deep Q-Networks](https://dilithjay.com/blog/dqn). My capstone advisor, Professor Watson, once told me: "We're so used to reading words that spending a few hours on a formula or diagram feels too foreign." He was right. So I'm going to use the Feynman technique here—if I can teach this to you, then I've truly understood it.
+
+Let me start with what captured my attention in the first place.
+
+## The Breakthrough That Wasn't Supposed to Happen
+
+In 2015, Google DeepMind released a model that learned to play Atari Breakout at superhuman levels. But here's what made it extraordinary: **the system received zero human-engineered features**. No one told it what a ball was. No one explained the paddle. No one defined the concept of "breaking bricks for points."
+
+It just... figured it out.
+
+:::youtube url="https://www.youtube.com/watch?v=V1eYniJ0Rnk" title="Atari Breakout - DQN Learning Progression"
+:::
+
+Watch the progression:
+
+- **First 10 minutes**: Clumsy, random movements. Constant failures.
+- **After 120 minutes**: The model starts understanding the game mechanics.
+- **After 240 minutes**: It discovers something remarkable—a strategy most humans never find.
+
+That last part is what gets me. The AI figured out that if it drills a tunnel through the bricks to the top layer, the ball does all the work. It's a **strategy of minimizing error by delegating effort**. The machine didn't just learn to play—it learned to optimize.
+
+> [!NOTE]
+> **Distributed Representation in Action**
+> This immediately puts us in the world of [connectionism](https://en.wikipedia.org/wiki/Connectionism)—a concept we've been exploring in computational neuroscience class. The complexity isn't programmed; it emerges from the network itself.
+
+## Deconstructing the Architecture: Input to Action
+
+Let me break down the basic architecture, focusing on the flow that makes this possible.
+
+![DQN Architecture Diagram](../assets/images/dqn-archi.png "The DQN architecture: Agent receives state, DNN predicts Q-values, policy selects action, environment provides reward")
+
+> [!INFO]
+> **📸 Image Suggestion: Add the DQN Architecture Diagram**
+> Download and save the DQN architecture flowchart from [Dilith Jayakody's blog](https://dilithjay.com/blog/dqn) showing the Agent → State → DNN → Policy → Action → Environment → Reward loop.
+
+### The Input State: Raw Reality
+
+The input is just the **raw game screen**—pixels. Nothing more. No preprocessed features, no human intuition baked in. This is critical because it means the network must build its own internal representation of what matters.
+
+The input flows into a **deep neural network** trained to approximate something called a **Q-value function**, denoted as Q(S, A | θ).
+
+In plain English: "If I'm in this state (S) and I take this action (A), what is the maximum future reward I can expect to get?"
+
+### The Output: A Menu of Possibilities
+
+The network outputs a **list of predicted Q-values**—one for every possible action:
+
+- Should I move left?
+- Should I move right?
+- Should I stay still?
+- Should I inch just a bit to change the ball's bounce angle?
+
+The agent simply chooses the action with the **highest predicted value**.
+
+This entire process—perceive, predict, act, observe reward—is a **continuous loop**. The agent and the environment (the game) constantly interact. This interaction is the **experience that drives learning**.
+
+Really exciting, right?
+
+## The Stability Problem: Why This Almost Didn't Work
+
+Here's where the biggest engineering challenge emerges. The network is **huge and non-linear**, which makes it inherently unstable.
+
+Think back to the work of [Rumelhart and McClelland on Parallel Distributed Processing](https://en.wikipedia.org/wiki/Connectionism#Parallel_distributed_processing) (PDP). They demonstrated that deep neural networks can learn complex representations, but they also showed how **unstable** such learning can be.
+
+DQN uses two major engineering tricks to solve this.
+
+### Trick #1: Experience Replay Buffer
+
+![Experience Replay Buffer Workflow](../src/assets/images/experience-replay-diagram.png "How the replay buffer breaks temporal correlation by sampling random past experiences")
+
+> [!INFO]
+> **📸 Image Suggestion: Experience Replay Workflow Diagram**
+> Download the Experience Replay workflow diagram from [Dilith's blog](https://dilithjay.com/blog/dqn) showing how experiences (state, action, reward, next state) are stored in the buffer and then randomly sampled for training. Save as `experience-replay-diagram.png`.
+
+**The Problem:** When an agent plays a game, it sees frames back-to-back. These frames are **highly correlated**. It's essentially seeing the same data repeatedly—what we call **non-IID data** (not independent and identically distributed).
+
+This causes the network to **overfit** or memorize recent patterns, like a person who crams for an exam and immediately forgets everything afterward.
+
+**The Solution:** The agent stores every single game step—the state, the action, the reward, the next state—into a large database called the **replay buffer**.
+
+During training, instead of learning from consecutive frames, the network samples **random batches** from this buffer. This breaks the temporal correlation and provides diverse learning examples.
+
+```python
+# Simplified Experience Replay Logic
+class ReplayBuffer:
+    def __init__(self, capacity):
+        self.buffer = []
+        self.capacity = capacity
+
+    def store(self, state, action, reward, next_state):
+        if len(self.buffer) >= self.capacity:
+            self.buffer.pop(0)  # Remove oldest experience
+        self.buffer.append((state, action, reward, next_state))
+
+    def sample(self, batch_size):
+        return random.sample(self.buffer, batch_size)
+```
+
+By sampling randomly from past experiences, the network sees a diverse set of situations, preventing it from getting stuck in local patterns.
+
+> [!TIP]
+> **Non-IID Data and Overfitting**
+> Imagine trying to learn to drive by only practicing in your neighborhood. You'd overfit to those specific streets. Experience replay is like practicing on random streets from across the city—it forces generalization.
+
+### Trick #2: The Target Network
+
+This is the most elegant engineering solution in the entire architecture.
+
+**The Problem:** The network is predicting future scores using its own weights. But these weights are **changing every millisecond** as it learns.
+
+Imagine you're building a wall (the learning goal), but the hammer you use (your changing prediction) also causes the blueprint (the learning target) to move. This is why deep parallel networks were so unstable—the learning signal itself was too chaotic.
+
+**The Solution:** DQN uses **two separate neural networks**:
+
+1. **Main Network**: Always learning, changes its weights every step
+2. **Target Network**: A frozen, stable copy of the main network's weights from a few thousand steps ago
+
+The main network does the hard work of learning. The target network provides a **fixed, stable number** for the future score prediction.
+
+### The Learning Equation: Where It All Comes Together
+
+Let's look at the most important line of code in the entire DQN implementation:
+
+```python
+# The Q-target calculation
+Q_target = reward + gamma * Q_targets_next
+```
+
+Breaking this down in English:
+
+#### Q_target = immediate score + future score
+
+- **Immediate score (reward)**: The moment the agent moves the paddle, it gets a tiny score bump from the game, say +1. This is easy—it's just what happened.
+
+- **Future score (Q_targets_next)**: This is the **target network's prediction** for the best possible score it can get from the very next frame.
+
+By deliberately keeping the learning target stable (via the frozen target network), DQN imposes a **critical constraint on its own chaotic parallel learning process**. This allows the entirely distributed system to reliably converge to the right answer.
+
+```python
+def learn(self, experiences, gamma):
+    states, actions, rewards, next_states, dones = experiences
+
+    # Main network predicts Q-values for current states
+    Q_expected = self.qnetwork_local(states).gather(1, actions)
+
+    # Target network predicts Q-values for next states (STABLE)
+    Q_targets_next = self.qnetwork_target(next_states).detach().max(1)[0].unsqueeze(1)
+
+    # Calculate target: immediate + discounted future
+    Q_targets = rewards + (gamma * Q_targets_next * (1 - dones))
+
+    # Learn from the difference
+    loss = F.mse_loss(Q_expected, Q_targets)
+    self.optimizer.zero_grad()
+    loss.backward()
+    self.optimizer.step()
+```
+
+## Why This Matters Beyond Breakout
+
+I'm writing about this at midnight because I just learned how [convolutional neural networks](https://en.wikipedia.org/wiki/Convolutional_neural_network) work, and I'm seeing the connections everywhere. At the end of the day, it's all just a **multi-layer perceptron** in the later layers.
+
+But the brilliance of DQN isn't just that it works—it's **how** it works. The engineering tricks that stabilize the learning process (experience replay and target networks) are solutions to fundamental problems in neural network training:
+
+1. **Correlation in sequential data**
+2. **Non-stationary learning targets**
+3. **Catastrophic forgetting**
+
+These aren't just problems in game-playing AIs. They show up in:
+
+- Financial prediction models
+- Robotics control systems
+- Medical diagnosis networks
+- Any system that learns from sequential, real-world data
+
+## The Connectionist Revelation
+
+What excites me most is the **philosophical parallel** to connectionism. The DQN doesn't have a symbolic representation of "ball" or "paddle" or "strategy." It has learned a **distributed representation** where millions of weights across the network collectively encode these concepts.
+
+There's no single neuron that means "tunnel through the top." Instead, the strategy emerges from the **pattern of activation** across thousands of interconnected units.
+
+This is exactly what Rumelhart and McClelland argued in their PDP work—that intelligence doesn't require symbolic manipulation. It can emerge from the interaction of simple, neuron-like units following simple rules.
+
+> [!SUCCESS]
+> **Emergent Intelligence**
+> The AI didn't just learn to play Breakout. It discovered a strategy that emerges from pure optimization—no symbols, no rules, just patterns of activation converging toward maximum reward.
+
+## What I'm Learning: Privilege and Responsibility
+
+I'm really glad I'm learning about machine learning now, after building intuition through hands-on projects like the [motion controller](/05_phase1-technical-log). I understand the difference between:
+
+- **Knowing** that neural networks work
+- **Understanding** why specific engineering choices matter
+- **Appreciating** the elegance of solutions like the target network
+
+I feel privileged to be learning all of this. But with that privilege comes responsibility—to understand not just the "what" but the "why," and to communicate it clearly.
+
+Because the real breakthrough isn't that we can train an AI to play Breakout.
+
+The breakthrough is that we can build systems that **learn to learn**, that discover strategies through pure trial and error, and that reveal fundamental truths about intelligence itself—both artificial and biological.
+
+---
+
+## Further Reading
+- [Original DQN Paper (Mnih et al., 2015)](https://www.nature.com/articles/nature14236)
+- [Dilith Jayakody's DQN Guide](https://dilithjay.com/blog/dqn)
+- [Parallel Distributed Processing (Rumelhart & McClelland)](https://en.wikipedia.org/wiki/Connectionism#Parallel_distributed_processing)
+- [Game Feel: A Game Designer's Guide to Virtual Sensation](https://gamifique.wordpress.com/wp-content/uploads/2011/11/2-game-feel.pdf)
+
+
+================================================================================
+
+## One Sensor, Two Gestures: Engineering Bike Turn Signals on a Student Budget
+**Date:** 2025-10-04
+**Type:** TECHNICAL EXPLORATION
+**Phase:** Side Quest - EMG Biosensor Experimentation
+**Description:** When you only have one AD8232 EMG sensor and a dream of making Taiwan's bikes safer, you get creative with muscle placement and machine learning.
+**Source File:** 09_emg-bike-turn-signals.md
+
+
+Budget constraints force the most interesting engineering decisions.
+
+:::loom url="https://www.loom.com/embed/7febe4d6cdfe4b7eaa21f64bcb14fb8c" title="EMG Bike Turn Signals - One Sensor, Two Gestures"
+:::
+
+> [!WARNING]
+> **PROJECT CONTEXT: BUDGET-DRIVEN INNOVATION**
+> This is a side quest exploring EMG biosensors for a practical safety problem: bikes in Taiwan don't have turn signals. The constraint? I pay my own tuition, and I only have one AD8232 sensor. The question? Can one sensor reliably distinguish between two different muscle activations on the same arm?
+
+## The Problem: Bikes Without Signals in Taiwan
+
+Here's something that surprised me when I moved to Taiwan: the bikes here don't have turn signals. Coming from a place where even hand signals are taught in driver's ed, this felt like a gap waiting for a solution.
+
+The obvious approach? Build a wearable EMG-based turn signal system. Left arm flexes trigger left signal. Right arm flexes trigger right signal. Simple, elegant, safe.
+
+The constraint? I only have one [AD8232 EMG sensor module](https://jin-hua.com.tw/page/product/show.aspx?num=33226&kw=ad8232&lang=TW).
+
+So I'm attempting something more ambitious: **using a single sensor to distinguish between two different muscle activations on the same arm**.
+
+## The Hardware: NodeMCU ESP32-S2 + AD8232
+
+Let me walk through the components I'm working with.
+
+### The Microcontroller: NodeMCU ESP32-S2
+
+I chose the [NodeMCU ESP32-S2](https://wiki.geekworm.com/NodeMCU-32S) for several practical reasons:
+
+**Power Flexibility**: It runs on 5V USB power, which means I can connect it to a power bank. This is critical—I can mount the entire system on my bike helmet without worrying about wall power.
+
+**Wireless Capability**: The ESP32's built-in Wi-Fi means I can transmit EMG data wirelessly to a processing unit (potentially a phone or a Raspberry Pi mounted on the bike).
+
+**ADC Resolution**: The ESP32 has 12-bit ADC (analog-to-digital converter) resolution, giving me values from 0-4095. This matches perfectly with the AD8232's output range.
+
+**GPIO Availability**: Multiple GPIO pins for expansion—if I eventually get a second sensor, the hardware can scale.
+
+![NodeMCU ESP32-S2 Pinout](../src/assets/images/nodemcu-esp32-pinout.png "NodeMCU ESP32-S2 Development Board - The brain of the operation")
+
+The specific model I'm using is the **NodeMCU-32S** variant with the CP2102 USB-to-serial chip, which makes programming straightforward via the Arduino IDE.
+
+### The Biosensor: AD8232 ECG/EMG Module
+
+The AD8232 is technically an **ECG (electrocardiography) module**, but it works brilliantly for EMG (electromyography) applications. Here's why:
+
+**High Gain**: The AD8232 provides signal amplification with a gain of approximately 100, which is necessary because muscle electrical signals (EMG) are in the microvolt range.
+
+**Analog Output**: It outputs a clean analog voltage signal (0-3.3V) that can be read directly by the ESP32's ADC pins.
+
+**Noise Filtering**: Built-in filtering helps reduce 50/60Hz power line interference—a common problem in bioelectric signal acquisition.
+
+**Three-Lead Configuration**: Uses three electrodes:
+
+- **RA (Right Arm)**: Positive input
+- **LA (Left Arm)**: Negative input
+- **RL (Right Leg)**: Ground reference
+
+![AD8232 EMG Sensor Module](../src/assets/images/ad8232-module.png "AD8232 Heart Rate Monitor - Repurposed for muscle sensing")
+
+The key insight here is that while the AD8232 is marketed for heart rate monitoring, the underlying technology—measuring bioelectric potentials—is identical for muscle activation. The difference is just in electrode placement and signal interpretation.
+
+### The Wiring: ESP32 ↔ AD8232
+
+The connection is straightforward:
+
+```text
+AD8232 Module → ESP32
+─────────────────────
+OUTPUT      → GPIO34 (ADC1_CH6)
+GND         → GND
+VCC         → 3.3V
+```
+
+> [!NOTE]
+> **Why GPIO34?** The ESP32 has two ADC units, but ADC2 shares pins with Wi-Fi functionality. To avoid conflicts, I'm using ADC1 pins exclusively. GPIO34 is ADC1_CH6—a stable, Wi-Fi-safe analog input pin.
+
+## The Challenge: Two Gestures, One Sensor
+
+Now we get to the core engineering challenge. Ideally, I'd have two sensors:
+
+- One on my **left forearm** → Left turn signal
+- One on my **right forearm** → Right turn signal
+
+But I only have one sensor. So the question becomes: **can I place electrodes on two different muscle groups on the same arm and reliably distinguish their activation patterns?**
+
+### Proposed Electrode Placement Strategy
+
+After studying arm anatomy and muscle activation patterns, I proposed this approach:
+
+**Gesture 1 - Right Turn Signal:**
+
+- **Target Muscle**: Extensor carpi radialis (forearm extensor)
+- **Activation Method**: Forcefully opening the palm flat, extending fingers
+- **Electrode Placement**: Over the extensor muscle group on the dorsal (back) side of the forearm
+
+**Gesture 2 - Left Turn Signal:**
+
+- **Target Muscle**: Biceps brachii
+- **Activation Method**: Flexing the arm, contracting the bicep
+- **Electrode Placement**: Over the belly of the bicep muscle on the upper arm
+
+The reasoning here is that these two muscle groups:
+
+1. Are anatomically **distinct** (forearm vs. upper arm)
+2. Perform **different motor functions** (extension vs. flexion)
+3. Can be **deliberately and independently activated**
+
+![Electrode Placement Strategy](../src/assets/images/emg-electrode-placement.png "Proposed electrode locations: extensor (yellow), bicep (green), ground (red)")
+
+### The Baseline Problem
+
+But here's where things get interesting. When I first connected the AD8232 and read raw voltage values with the ESP32, I saw something concerning:
+
+#### Resting baseline voltage: ~3,500 out of 4,095
+
+This is **85% of the maximum ADC range**. That means I only have about 600 digital levels (4095 - 3500) of headroom to detect muscle activation.
+
+Is this bad? I'm not entirely sure. On one hand, it limits dynamic range. On the other hand, if the signal-to-noise ratio is good within that remaining range, it might be fine.
+
+But it raises a critical question: **will the activation signals from two different muscles on the same arm be distinct enough to classify reliably?**
+
+## The Machine Learning Question
+
+This brings me to the core question I posed to Professor Watson: **Is this feasible for a machine learning model?**
+
+The specific challenges are:
+
+### Challenge 1: Signal Crosstalk
+
+Both electrode placements are measuring electrical activity from muscles on the same arm, connected by the same nervous system, sharing the same vascular and electrical ground plane. There's potential for **significant crosstalk**—signal bleeding from one muscle group into another.
+
+This is fundamentally different from, say, image classification. In computer vision, a cat and a dog are visually distinct objects. But two muscle activations on the same limb? Those are electrical signals propagating through a conductive, interconnected medium.
+
+### Challenge 2: The Human Distinguishability Principle
+
+Professor Watson and I discussed this last semester in the context of EEG (brain wave) analysis: **If a human expert can't reliably distinguish between two signal patterns, what makes us think a machine learning model can?**
+
+This principle is humbling and important. Machine learning isn't magic—it's pattern recognition. If the patterns themselves are fundamentally overlapping or indistinguishable, no amount of neural network layers will separate them.
+
+So the question becomes: Are extensor activation and bicep activation **perceptually distinct** in the EMG signal domain?
+
+### Challenge 3: The Single-Session Training Problem
+
+Because I only have one set of reusable electrode pads, and electrode placement precision matters enormously, I'm likely limited to **one long data collection session** for training.
+
+This creates several problems:
+
+**Lack of Variability**: In a typical machine learning project (like image classification), you'd collect data across multiple sessions, lighting conditions, angles, backgrounds. For EMG, variability might include:
+
+- Fresh muscles vs. fatigued muscles
+- Different electrode placement positions
+- Different arm positions and orientations
+- Different grip pressures on the bike handlebars
+
+**Generalization Risk**: If I train on data from a single session and then try to use the system days later (after removing and reattaching electrodes), **the model might fail catastrophically** due to slight alignment differences.
+
+**No Fatigue Data**: During an actual bike ride, my muscles will fatigue. The EMG signal from a fresh bicep flex looks different from a tired bicep flex. If my training data only captures the fresh state, the model won't generalize to real-world use.
+
+> [!DANGER]
+> **The Single-Session Training Trap**
+> Training a biosensor-based classifier on data from a single session is like training an image classifier on photos from a single camera angle. The model learns the specifics of that session, not the generalizable pattern.
+
+## The Alternative: The "Easy" Single-Gesture Classifier
+
+Of course, there's a simpler approach. I could just build a **single-gesture classifier**:
+
+- Place the electrode on one muscle (say, the bicep)
+- Train the model to detect "flex" vs. "no flex"
+- Map that to a single turn signal (e.g., left turn only)
+
+This would be easier. It would almost certainly work. The accuracy would be high.
+
+But—and I want to be blunt here—**it's not a satisfying project**.
+
+It's essentially a glorified if-else statement:
+
+```python
+if emg_signal > threshold:
+    turn_signal = "LEFT"
+else:
+    turn_signal = "OFF"
+```
+
+Sure, I could dress it up with a support vector machine or a simple neural network. I could add temporal smoothing, hysteresis, and all sorts of signal processing niceties. But fundamentally, I'm just detecting presence vs. absence of a signal.
+
+That's not machine learning in the interesting sense. That's **threshold detection with extra steps**.
+
+## The Real Question: Is Ambition Worth the Risk?
+
+So here's where I'm at. I have two paths:
+
+### Path A: The Ambitious Two-Gesture Classifier
+
+- Attempt to distinguish extensor activation from bicep activation
+- Use SVM or CNN to learn the distinction
+- Risk: Signal crosstalk might make this impossible
+- Risk: Single-session training might not generalize
+- Reward: If it works, it's a genuinely interesting application of ML to biosignal classification
+
+### Path B: The Pragmatic Single-Gesture Classifier
+
+- Simple, reliable, high-accuracy
+- Risk: None, really—this will almost certainly work
+- Reward: A working turn signal system
+- Downside: Not intellectually satisfying; feels like a cop-out
+
+I'm **intrinsically motivated** to make this work. Bikes in Taiwan genuinely don't have turn signals, and I bike regularly. This isn't just an academic exercise—I want to use this system in the real world.
+
+But as a student of computational neuroscience and machine learning, I also want to learn from the attempt. Even if the two-gesture approach fails, understanding **why** it fails teaches me something about signal overlap, feature separability, and the limits of pattern recognition.
+
+## The Advisor's Dilemma
+
+This is why I'm asking Professor Watson for guidance. As my advisor, he has the experience to know:
+
+- Have similar projects succeeded or failed?
+- What does the literature say about single-sensor multi-gesture EMG classification?
+- Are there signal processing techniques (like independent component analysis or blind source separation) that could help with crosstalk?
+- Is there a middle path—perhaps adding temporal features (like flex duration or rise time) to increase feature space dimensionality?
+
+And maybe most importantly: **Is this a learning opportunity worth pursuing, even if it ultimately fails?**
+
+## What Happens Next
+
+I've laid out the technical constraints, the engineering challenge, and the machine learning question. Now I wait for feedback.
+
+In the meantime, I'm collecting preliminary data. Even if the two-gesture approach proves infeasible, I'll learn something about EMG signal characteristics, electrode placement sensitivity, and the practical limits of budget-constrained biosensor projects.
+
+And if it works? Well, then I'll be the guy biking around Taipei with muscle-activated turn signals, and that's a pretty cool outcome.
+
+---
+
+> [!INFO]
+> **Hardware References**
+>
+> - [AD8232 ECG/EMG Module - Jin-Hua Electronics](https://jin-hua.com.tw/page/product/show.aspx?num=33226&kw=ad8232&lang=TW)
+> - [NodeMCU ESP32-S2 - Geekworm Wiki](https://wiki.geekworm.com/NodeMCU-32S)
+> - [AD8232 Datasheet - Analog Devices](https://www.analog.com/en/products/ad8232.html)
+> - [ESP32 ADC Characteristics - Espressif Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/adc.html)
+
+> [!TIP]
+> **Related Projects**
+>
+> This EMG experimentation builds on principles from the [Phase 1 Motion Controller](/05_phase1-technical-log), where I learned the importance of empirical measurement over assumption-based design. The same "data dictates the design" philosophy applies here—I'll let the signal characteristics guide the approach, not my preconceptions.
+
+
+================================================================================
+
+# POMODORO WORK SESSIONS
+
+## Work Journal: Web Development on Markdown Capstone Project
+**Date:** 2025-09-22
+**Time:** 14:37
+**Source File:** pomo_2025-09-22_143756.md
+
+
+# Work Journal: Web Development on Markdown Capstone Project
+
+*   **Project:** Markdown Capstone (`md-capstonefall25_25TPE`)
+*   **Focus:** Began work on a new `2-column` feature branch, starting with installing the Python `pyperclip` library for a helper script.
+*   **Activity:** Reviewed the project's core frontend files, including `index.html`, `build.js`, and `blog-script.js`, likely to gather context before implementing layout changes.
+
+<details>
+<summary>Raw Log Data</summary>
+
+```
+[2025-09-22 14:02:51] :: CLIPBOARD_COPY :: md-capstonefall25_25TPE git:(2-column) ✗ pip install pyperclip
+WARNING: Ignoring invalid distributio...
+[2025-09-22 14:02:51] :: WINDOW_CHANGE :: Code pomo.sh — md-capstonefall25_25TPE
+[2025-09-22 14:03:00] :: KEYSTROKE :: Key.enter
+[2025-09-22 14:03:09] :: WINDOW_CHANGE :: Code build.js — md-capstonefall25_25TPE
+[2025-09-22 14:03:11] :: WINDOW_CHANGE :: Code blog-script.js — md-capstonefall25_25TPE
+[2025-09-22 14:03:15] :: WINDOW_CHANGE :: Code index.html — md-capstonefall25_25TPE
+[2025-09-22 14:03:17] :: KEYSTROKE :: c
+[2025-09-22 14:03:18] :: KEYSTROKE :: Key.ctrl
+[2025-09-22 14:03:18] :: KEYSTROKE :: c
+```
+</details>
+
+================================================================================
+
+## Work Journal: Web Development on Markdown Capstone Project
+**Date:** 2025-09-22
+**Time:** 14:44
+**Source File:** pomo_2025-09-22_144422.md
+
+
+# Work Journal: Web Development on Markdown Capstone Project
+
+*   **Project:** Markdown Capstone (`md-capstonefall25_25TPE`)
+*   **Focus:** Began work on a new `2-column` feature branch, starting with installing the Python `pyperclip` library for a helper script.
+*   **Activity:** Reviewed the project's core frontend files, including `index.html`, `build.js`, and `blog-script.js`, likely to gather context before implementing layout changes.
+
+<details>
+<summary>Raw Log Data</summary>
+
+```
+[2025-09-22 14:02:51] :: CLIPBOARD_COPY :: md-capstonefall25_25TPE git:(2-column) ✗ pip install pyperclip
+WARNING: Ignoring invalid distributio...
+[2025-09-22 14:02:51] :: WINDOW_CHANGE :: Code pomo.sh — md-capstonefall25_25TPE
+[2025-09-22 14:03:00] :: KEYSTROKE :: Key.enter
+[2025-09-22 14:03:09] :: WINDOW_CHANGE :: Code build.js — md-capstonefall25_25TPE
+[2025-09-22 14:03:11] :: WINDOW_CHANGE :: Code blog-script.js — md-capstonefall25_25TPE
+[2025-09-22 14:03:15] :: WINDOW_CHANGE :: Code index.html — md-capstonefall25_25TPE
+[2025-09-22 14:03:17] :: KEYSTROKE :: c
+[2025-09-22 14:03:18] :: KEYSTROKE :: Key.ctrl
+[2025-09-22 14:03:18] :: KEYSTROKE :: c
+```
+</details>END
+
+================================================================================
+
+## Work Journal: Developing AI-Powered Pomodoro Logger
+**Date:** 2025-09-22
+**Time:** 14:56
+**Source File:** pomo_2025-09-22_145619.md
+
+
+# Work Journal: Developing AI-Powered Pomodoro Logger
+
+*   **Project:** Markdown Capstone (`md-capstonefall25_25TPE`)
+*   **Focus:** Integrating an AI component into the Pomodoro logger.
+*   **Activity:** Referenced a prompt from Google AI Studio while editing the Python logger script (`pomodoro_logger.py`) and related JavaScript files (`build.js`, `app.js`), working with a `projectLog` variable.
+
+<details>
+<summary>Raw Log Data</summary>
+
+```
+[2025-09-22 14:54:59] :: CLIPBOARD_COPY :: https://aistudio.google.com/prompts/1Z5BrtSVhvGCJ-1lgvUlPYsWr0ygXKY07?save=true
+[2025-09-22 14:54:59] :: WINDOW_CHANGE :: Code pomodoro_logger.py — md-capstonefall25_25TPE
+[2025-09-22 14:55:00] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:55:00] :: KEYSTROKE :: Key.tab
+[2025-09-22 14:55:01] :: WINDOW_CHANGE :: Dia AI Pomo Persistent | Goo…
+[2025-09-22 14:55:01] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:55:01] :: KEYSTROKE :: Key.tab
+[2025-09-22 14:55:03] :: WINDOW_CHANGE :: Code pomodoro_logger.py — md-capstonefall25_25TPE
+[2025-09-22 14:55:11] :: WINDOW_CHANGE :: Code build.js — md-capstonefall25_25TPE
+[2025-09-22 14:55:25] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:55:25] :: KEYSTROKE :: c
+[2025-09-22 14:55:25] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:55:26] :: KEYSTROKE :: v
+[2025-09-22 14:55:27] :: CLIPBOARD_COPY :: projectLog
+[2025-09-22 14:55:29] :: WINDOW_CHANGE :: Code app.js — md-capstonefall25_25TPE
+[2025-09-22 14:55:39] :: WINDOW_CHANGE :: Code build.js — md-capstonefall25_25TPE
+[2025-09-22 14:55:47] :: KEYSTROKE :: Key.shift
+[2025-09-22 14:55:51] :: KEYSTROKE :: c
+[2025-09-22 14:55:52] :: KEYSTROKE :: Key.ctrl
+[2025-09-22 14:55:52] :: KEYSTROKE :: c
+```
+</details>
+
+================================================================================
+
+## CSS Refactoring and Styling for Log Component
+**Date:** 2025-09-22
+**Time:** 15:05
+**Source File:** pomo_2025-09-22_150519.md
+
+
+# CSS Refactoring and Styling for Log Component
+
+*   Focused on frontend development for the `md-capstonefall25_25TPE` project, adding a `log-content` element to `index.html` and styling it in `_log.css`.
+*   Refactored CSS by moving styles, such as a `border-bottom`, from `_header.css` to `_log.css` and experimented with font styles.
+*   Frequently switched between VS Code and the browser (Safari), saving and refreshing the local development server (`http://127.0.0.1:3000`) to view changes. A significant amount of time was also spent browsing articles about biosensors and video games.
+
+<details>
+<summary>Raw Log Data</summary>
+
+```
+[2025-09-22 14:59:36] :: CLIPBOARD_COPY :: log-content
+[2025-09-22 14:59:36] :: WINDOW_CHANGE :: Code index.html — md-capstonefall25_25TPE
+[2025-09-22 14:59:41] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:59:41] :: KEYSTROKE :: v
+[2025-09-22 14:59:46] :: WINDOW_CHANGE :: Code _log.css — md-capstonefall25_25TPE
+[2025-09-22 14:59:48] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:59:48] :: KEYSTROKE :: /
+[2025-09-22 14:59:49] :: KEYSTROKE :: s
+[2025-09-22 14:59:50] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:59:50] :: KEYSTROKE :: Key.tab
+[2025-09-22 14:59:51] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:59:51] :: KEYSTROKE :: Key.cmd
+[2025-09-22 14:59:51] :: KEYSTROKE :: r
+[2025-09-22 14:59:52] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:00:00] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:00] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:00] :: WINDOW_CHANGE :: Code _log.css — md-capstonefall25_25TPE
+[2025-09-22 15:00:02] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:02] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:03] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:03] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:04] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:04] :: KEYSTROKE :: z
+[2025-09-22 15:00:04] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:04] :: KEYSTROKE :: s
+[2025-09-22 15:00:06] :: KEYSTROKE :: Key.backspace
+[2025-09-22 15:00:06] :: KEYSTROKE :: 2
+[2025-09-22 15:00:06] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:07] :: KEYSTROKE :: s
+[2025-09-22 15:00:07] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:08] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:08] :: KEYSTROKE :: r
+[2025-09-22 15:00:08] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:00:15] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:15] :: KEYSTROKE :: c
+[2025-09-22 15:00:16] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:16] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:16] :: CLIPBOARD_COPY :: .site-header
+[2025-09-22 15:00:16] :: WINDOW_CHANGE :: Code _log.css — md-capstonefall25_25TPE
+[2025-09-22 15:00:16] :: KEYSTROKE :: a
+[2025-09-22 15:00:17] :: KEYSTROKE :: v
+[2025-09-22 15:00:18] :: WINDOW_CHANGE :: Code _header.css — md-capstonefall25_25TPE
+[2025-09-22 15:00:20] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:20] :: KEYSTROKE :: c
+[2025-09-22 15:00:20] :: KEYSTROKE :: x
+[2025-09-22 15:00:20] :: CLIPBOARD_COPY ::     border-bottom: 1px solid var(--border-subtle);
+[2025-09-22 15:00:21] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:21] :: KEYSTROKE :: z
+[2025-09-22 15:00:21] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:21] :: KEYSTROKE :: /
+[2025-09-22 15:00:22] :: KEYSTROKE :: s
+[2025-09-22 15:00:22] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:22] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:23] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:00:23] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:23] :: KEYSTROKE :: r
+[2025-09-22 15:00:24] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:24] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:25] :: WINDOW_CHANGE :: Code _header.css — md-capstonefall25_25TPE
+[2025-09-22 15:00:31] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:32] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:32] :: KEYSTROKE :: a
+[2025-09-22 15:00:32] :: KEYSTROKE :: f
+[2025-09-22 15:00:33] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:33] :: KEYSTROKE :: a
+[2025-09-22 15:00:33] :: KEYSTROKE :: c
+[2025-09-22 15:00:34] :: KEYSTROKE :: Key.ctrl
+[2025-09-22 15:00:34] :: KEYSTROKE :: c
+[2025-09-22 15:00:35] :: KEYSTROKE :: Key.backspace
+[2025-09-22 15:00:35] :: KEYSTROKE :: Key.backspace
+[2025-09-22 15:00:36] :: KEYSTROKE :: Key.ctrl
+[2025-09-22 15:00:36] :: KEYSTROKE :: c
+[2025-09-22 15:00:36] :: KEYSTROKE :: Key.alt
+[2025-09-22 15:00:36] :: KEYSTROKE :: ç
+[2025-09-22 15:00:38] :: KEYSTROKE :: Key.down
+[2025-09-22 15:00:38] :: KEYSTROKE :: Key.down
+[2025-09-22 15:00:38] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:00:38] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:00:39] :: CLIPBOARD_COPY :: log-content
+[2025-09-22 15:00:43] :: WINDOW_CHANGE :: Code _log.css — md-capstonefall25_25TPE
+[2025-09-22 15:00:44] :: KEYSTROKE :: Key.shift
+[2025-09-22 15:00:44] :: KEYSTROKE :: Key.right
+[2025-09-22 15:00:44] :: KEYSTROKE :: 1
+[2025-09-22 15:00:45] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:45] :: KEYSTROKE :: s
+[2025-09-22 15:00:45] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:46] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:46] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:47] :: KEYSTROKE :: Key.right
+[2025-09-22 15:00:47] :: KEYSTROKE :: Key.left
+[2025-09-22 15:00:48] :: KEYSTROKE :: Key.backspace
+[2025-09-22 15:00:48] :: KEYSTROKE :: 0
+[2025-09-22 15:00:49] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:49] :: KEYSTROKE :: s
+[2025-09-22 15:00:49] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:49] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:50] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:50] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:50] :: KEYSTROKE :: /
+[2025-09-22 15:00:51] :: KEYSTROKE :: s
+[2025-09-22 15:00:51] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:00:51] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:00:51] :: KEYSTROKE :: r
+[2025-09-22 15:00:53] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:01:01] :: WINDOW_CHANGE :: Dia Your Muscles Are Liars,…
+[2025-09-22 15:01:03] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:03] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:01:03] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:05] :: WINDOW_CHANGE :: Code _log.css — md-capstonefall25_25TPE
+[2025-09-22 15:01:07] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:08] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:09] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:01:09] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:09] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:11] :: WINDOW_CHANGE :: Code
+[2025-09-22 15:01:11] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:12] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:13] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:01:29] :: WINDOW_CHANGE :: Dia Gaming's Next Controller…
+[2025-09-22 15:01:37] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:01:45] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:45] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:47] :: KEYSTROKE :: Key.shift
+[2025-09-22 15:01:47] :: WINDOW_CHANGE :: Code _log.css — md-capstonefall25_25TPE
+[2025-09-22 15:01:47] :: KEYSTROKE :: P
+[2025-09-22 15:01:47] :: KEYSTROKE :: I
+[2025-09-22 15:01:47] :: KEYSTROKE :: X
+[2025-09-22 15:01:47] :: KEYSTROKE :: E
+[2025-09-22 15:01:47] :: KEYSTROKE :: L
+[2025-09-22 15:01:48] :: KEYSTROKE :: Key.space
+[2025-09-22 15:01:48] :: KEYSTROKE :: F
+[2025-09-22 15:01:48] :: KEYSTROKE :: O
+[2025-09-22 15:01:48] :: KEYSTROKE :: N
+[2025-09-22 15:01:48] :: KEYSTROKE :: T
+[2025-09-22 15:01:48] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:01:51] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:51] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:51] :: WINDOW_CHANGE :: Code app.js — md-capstonefall25_25TPE
+[2025-09-22 15:01:52] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:52] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:01:55] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:56] :: KEYSTROKE :: Key.shift
+[2025-09-22 15:01:56] :: KEYSTROKE :: Key.alt
+[2025-09-22 15:01:57] :: KEYSTROKE :: Key.right
+[2025-09-22 15:01:57] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:57] :: KEYSTROKE :: c
+[2025-09-22 15:01:59] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:59] :: KEYSTROKE :: v
+[2025-09-22 15:01:59] :: CLIPBOARD_COPY :: readable-font
+[2025-09-22 15:01:59] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:01:59] :: KEYSTROKE :: z
+[2025-09-22 15:02:05] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:05] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:02:07] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:02:09] :: WINDOW_CHANGE :: Dia The Technical Deep Dive:…
+[2025-09-22 15:02:13] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:02:15] :: WINDOW_CHANGE :: Dia The Technical Deep Dive:…
+[2025-09-22 15:02:23] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:02:28] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:28] :: KEYSTROKE :: Key.shift
+[2025-09-22 15:02:28] :: KEYSTROKE :: b
+[2025-09-22 15:02:29] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:29] :: KEYSTROKE :: c
+[2025-09-22 15:02:30] :: KEYSTROKE :: Key.space
+[2025-09-22 15:02:30] :: KEYSTROKE :: s
+[2025-09-22 15:02:30] :: KEYSTROKE :: a
+[2025-09-22 15:02:30] :: KEYSTROKE :: f
+[2025-09-22 15:02:30] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:02:31] :: CLIPBOARD_COPY :: http://127.0.0.1:3000/frontend/src/index.html
+[2025-09-22 15:02:32] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:32] :: KEYSTROKE :: v
+[2025-09-22 15:02:33] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:02:33] :: WINDOW_CHANGE :: Safari Start Page
+[2025-09-22 15:02:35] :: WINDOW_CHANGE :: Safari
+[2025-09-22 15:02:39] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:39] :: KEYSTROKE :: r
+[2025-09-22 15:02:40] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:40] :: KEYSTROKE :: r
+[2025-09-22 15:02:41] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:02:41] :: KEYSTROKE :: Key.space
+[2025-09-22 15:02:41] :: KEYSTROKE :: l
+[2025-09-22 15:02:41] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:02:43] :: WINDOW_CHANGE :: Dia Biosensors → Video Games…
+[2025-09-22 15:02:47] :: WINDOW_CHANGE :: Dia Vial Web
+[2025-09-22 15:02:57] :: WINDOW_CHANGE :: Safari
+[2025-09-22 15:03:13] :: KEYSTROKE :: Key.enter
+[2025-09-22 15:03:44] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:03:45] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:03:45] :: WINDOW_CHANGE :: Dia Vial Web
+[2025-09-22 15:03:45] :: KEYSTROKE :: Key.tab
+[2025-09-22 15:03:47] :: WINDOW_CHANGE :: Code app.js — md-capstonefall25_25TPE
+[2025-09-22 15:03:48] :: KEYSTROKE :: Key.cmd
+[2025-09-22 15:03:48] :: KEYSTROKE :: w
+[2025-09-22 15:03:48] :: KEYSTROKE :: w
+[2025-09-22 15:03:48] :: KEYSTROKE :: w
+[2025-09-22 15:03:48] :: KEYSTROKE :: w
+[2025-09-22 15:03:48] :: KEYSTROKE :: w
+[2025-09-22 15:03:49] :: KEYSTROKE :: w
+[2025-09-22 15:03:49] :: KEYSTROKE :: w
+[2025-09-22 15:03:49] :: KEYSTROKE :: w
+[2025-09-22 15:03:49] :: WINDOW_CHANGE :: Code md-capstonefall25_25TPE
+[2025-09-22 15:03:56] :: KEYSTROKE :: Key.ctrl
+[2025-09-22 15:03:56] :: KEYSTROKE :: c
+```
+</details>
+
+================================================================================
+
+## Managing GitHub PRs and Branches for Capstone Project
+**Date:** 2025-09-24
+**Time:** 17:27
+**Source File:** pomo_2025-09-24_172753.md
+
+
+# Managing GitHub PRs and Branches for Capstone Project
+
+*   Reviewed the GitHub pull request for the "Add audio recording" feature within the `md-capstonefall25_25TPE` repository.
+*   Managed the local codebase by checking out the `2-column` feature branch and pulling the latest remote changes.
+*   Briefly continued research on sourcing electronic components from the Taiwanese vendor "德源電子" and looked into setting up GitHub Copilot.
+
+================================================================================
+
+## Work Session
+**Date:** 2025-09-24
+**Time:** 18:22
+**Source File:** pomo_2025-09-24_182211.md
+
+
+# Refining Blog Content and Reaching Out to Makers' Club
+
+*   Performed a detailed review and edit of the "shin-controller" blog post, focusing on refining the narrative, adjusting titles, removing unneeded source code snippets, and establishing a "skeptical technologist" persona with help from Google AI Studio.
+*   Cleaned up project documentation by removing duplicate content from `technical-deepdive.html` and creating a new `BLOG_MEDIA_GUIDE.md` to organize assets for the post.
+*   Drafted, translated, and refined an email to the NTU Makers' Club to inquire about components and collaboration for a personal EMG-based project.
+
+================================================================================
+
+## Polishing Blog Content and Defining Writing Tone
+**Date:** 2025-09-24
+**Time:** 22:50
+**Source File:** pomo_2025-09-24_225021.md
+
+
+# Polishing Blog Content and Defining Writing Tone
+
+*   Finalized the "Biosensors → Video Games" blog post by editing content, managing source code snippets, and viewing changes on a local server.
+*   Utilized Google AI Studio to establish a "Skeptical Technologist" writing persona, creating a formal style guide in `WRITING-TONE.md` to ensure tonal consistency.
+*   Used MacWhisper to transcribe dictated notes for UX improvements and content ideas, while also preparing the next blog post on "human calibration."
+
+================================================================================
+
+## UI/UX Overhaul for Project Log Display
+**Date:** 2025-09-24
+**Time:** 23:31
+**Source File:** pomo_2025-09-24_233150.md
+
+
+# UI/UX Overhaul for Project Log Display
+
+*   Implemented a hover-to-expand animation for work journal cards using CSS transitions for `opacity` and `max-height`, creating a compact view that reveals details upon user interaction.
+*   Managed site content by updating the frontmatter in several Markdown blog posts to control their published status and ensure the JavaScript build script rendered them correctly.
+*   Resolved a Git merge conflict after pulling from the `main` branch into the `2-column` feature branch and pushed the updated code to GitHub for Vercel deployment.
+
+================================================================================
+
+## Pivoting to Module-Based EMG/ECG Design
+**Date:** 2025-09-24
+**Time:** 23:54
+**Source File:** pomo_2025-09-24_235428.md
+
+
+# Pivoting to Module-Based EMG/ECG Design
+
+*   Switched from a complex from-scratch circuit to a simpler AD8232 module for the biosensor project after consulting with an AI assistant.
+*   Finalized the power strategy, opting to power the AD8232 module directly from the ESP32 board via its 3.3V output, eliminating the need for 9V batteries.
+*   Confirmed the practical connectivity details, identifying the specific Micro-USB cable required to program the NodeMCU-32S board from the computer.
+
+================================================================================
+
+## Refining Capstone Strategy: EMG Module and CNN Approach
+**Date:** 2025-09-25
+**Time:** 10:09
+**Source File:** pomo_2025-09-25_100944.md
+
+
+# Refining Capstone Strategy: EMG Module and CNN Approach
+
+*   Pivoted from building a from-scratch circuit to using a pre-made AD8232 EMG module to accelerate the prototyping process.
+*   Finalized the machine learning pipeline: a pre-trained CNN will be used for rapid feature engineering on raw EMG data, with its output feeding a Random Forest classifier.
+*   Next step is to collect ~100 samples of forearm muscle contractions and rests to train a simple proof-of-concept model and get the basic hardware-software pipeline working.
+
+================================================================================
+
+## Smoother Pomodoro Logs, Slicker Tooltips
+**Date:** 2025-09-25
+**Time:** 10:40
+**Source File:** pomo_2025-09-25_104035.md
+
+
+# Smoother Pomodoro Logs, Slicker Tooltips
+
+* Refactored log entry styles for a gentler fade-in animation and sharper tooltip visibility.
+* Enhanced Pomodoro image hover handling; added blog post thumbnail extraction and tooltip features.
+* Leveraged CSS opacity and JavaScript, with all changes committed to the CarlKho-Minerva repo.
+
+================================================================================
+
+## Maximum Likelihood Estimation: Concepts, Process, and Practice
+**Date:** 2025-09-25
+**Time:** 10:41
+**Source File:** pomo_2025-09-25_104151.md
+
+
+# Maximum Likelihood Estimation: Concepts, Process, and Practice
+* Explored 12-step derivation process for maximum likelihood estimation (MLE), contrasting frequentist and Bayesian perspectives.
+* Practiced deriving the MLE for the geometric distribution by hand, then used code (JAX, Python) to estimate parameters for more complex models (e.g., sigmoid), highlighting when to use analytical vs. computational approaches.
+* Discussed practical issues (e.g., underflow, kernel crashes with large data), and reinforced the importance of gradient descent for high-dimensional models like neural networks.
+
+================================================================================
+
+## Test Pomodoro with Images
+**Date:** 2025-09-25
+**Time:** 10:30
+**Source File:** pomo_2025-09-25_test.md
+
+
+# Test Pomodoro with Images
+
+* This is a test pomodoro entry to verify image functionality
+* Images should appear at the start of the card, before the bullet points
+* The images should be hidden initially and revealed on hover
+
+================================================================================
+
+## Automating Social Media Posts with Make.com Webhooks
+**Date:** 2025-09-27
+**Time:** 17:14
+**Source File:** pomo_2025-09-27_164513.md
+
+
+# Automating Social Media Posts with Make.com Webhooks
+
+*   Set up a Make.com webhook for automated social media posting, testing it with a `curl` command.
+*   Documented the webhook setup process in `WEBHOOK_SETUP.md` while researching X/Twitter API access.
+*   Resolved a Git merge conflict and cleaned up project files while troubleshooting persistent logging script crashes.
+
+================================================================================
+
+## Logger Feature Enhancement & Script Debugging
+**Date:** 2025-09-27
+**Time:** 17:51
+**Source File:** pomo_2025-09-27_172138.md
+
+
+# Logger Feature Enhancement & Script Debugging
+
+*   Dictated and started implementing image-pasting from clipboard into the `pomodoro_logger.py` script.
+*   Researched connectionism and neural networks, sharing 3Blue1Brown resources via Telegram.
+*   Generated and published a new journal entry, but the session was plagued by persistent `NoneType` errors from the monitoring script.
+
+================================================================================
+
+## Automating Social Media Posts and Designing a Portfolio Page
+**Date:** 2025-09-27
+**Time:** 17:31
+**Source File:** pomo_2025-09-27_173116.md
+
+
+# Automating Social Media Posts and Designing a Portfolio Page
+
+*   Researched and decided to use Make.com for automating social media posts for the capstone project, shifting away from Zapier.
+*   Dictated detailed feedback for the `pomo.sh` script to bring the terminal to the foreground upon completion, preventing missed timers.
+*   Designed a new "Just Works" portfolio page in Figma, focusing on a split-screen layout with a markdown-driven, LLM-friendly workflow.
+
+================================================================================
+
+## Deconstructing Neural Network Architecture
+**Date:** 2025-09-27
+**Time:** 18:32
+**Source File:** pomo_2025-09-27_175156.md
+
+
+# Deconstructing Neural Network Architecture
+
+*   Studied the foundational concept of neural networks breaking down complex problems (like digit recognition) into hierarchical layers: pixels → edges → patterns.
+*   Analyzed how weighted sums and biases act as the core "knobs and dials" that determine how neurons in one layer influence the next.
+*   Reviewed the role of the sigmoid function for "squishifying" activations to a 0-1 range and the efficiency gains from using matrix multiplication for computation.
+
+================================================================================
+
+## Enhancing Pomodoro Logger with Multi-Modal Capture
+**Date:** 2025-09-29
+**Time:** 11:14
+**Source File:** pomo_2025-09-29_103931.md
+
+
+# Enhancing Pomodoro Logger with Multi-Modal Capture
+
+*   Dictated a major feature enhancement for the `pomodoro_logger.py` script: capturing periodic screenshots to complement existing audio and text logs.
+*   Started studying the Parallel Distributed Processing JL McCLELLAND verbally and made connections to 3B1B's multi-layer perceptron.
+*   Wrote a "W" in 3B1B's interactive perceptron layer. I'm impressed.
+
+================================================================================
+
+## National Taiwan Uni - Arduino Workshop
+**Date:** 2025-10-01
+**Time:** 20:31
+**Source File:** pomo_2025-10-01_203103.md
+
+
+# National Taiwan Uni - Arduino Workshop
+
+*   Attended a "Maker Society" workshop on building an ESP8266 robot dog, using Google AI Studio to live-translate the Chinese presentation slides.
+*   Wrote and debugged a basic Arduino sketch for `analogRead`, using the AI assistant to fix a variable declaration error and understand the concept of a "floating pin."
+*   Successfully used the potentiometer to control a buzzer's pitch and a servo motor's spin (installed Servo.h)
+
+================================================================================
+
+## Assembling the AD8232 Biosensor Module
+**Date:** 2025-10-01
+**Time:** 20:32
+**Source File:** pomo_2025-10-01_203226.md
+
+
+# Assembling the AD8232 Biosensor Module
+
+*   Soldered header pins onto the AD8232 ECG board to begin physical prototyping for the muscle-activated turn signal project.
+*   Collaborated with a friend, Morgan, at the NTU makerspace to complete the hardware assembly.
+*   The module is now prepped for breadboarding, allowing for connection to a microcontroller for programming and testing.
+
+================================================================================
+
+## UI Update - Timeline
+**Date:** 2025-10-02
+**Time:** 01:17
+**Source File:** pomo_2025-10-02_011712.md
+
+
+# UI Update - Timeline
+
+*   Engaged in a rapid, conversational debugging session with GitHub Copilot to fix major CSS layout bugs, including image visibility, lazy-loading logic, and responsive grid alignment (75/25 ratio).
+*   Collaboratively designed and implemented new UI features, including a sticky header/footer, a custom modal, and an interactive horizontal timeline component to visualize project phases.
+
+================================================================================
+
+## Integrating Figma & Fixing Content Bugs
+**Date:** 2025-10-02
+**Time:** 22:40
+**Source File:** pomo_2025-10-02_224000.md
+
+
+# Integrating Figma & Fixing Content Bugs
+
+*   Replaced the timeline's "what is this?" text modal with an embedded Figma presentation to better showcase the project's design process.
+*   Debugged and fixed an issue where Loom video embeds were failing to render in a technical log by removing erroneous angle brackets from the markdown source.
+*   Refined the project timeline's responsive design, removing excess vertical spacing on desktop while preserving it on mobile for better readability.
+
+================================================================================
+
+## Data Export, Content Filtering & UX Refinements
+**Date:** 2025-10-03
+**Time:** 19:33
+**Source File:** pomo_2025-10-03_193321.md
+
+
+*   Enhanced Data Export. The "Download LLM.txt" button now also triggers a download of `blog-images.zip`
+*   Content Filtering & Video Management. Implemented a "Show side quests" checkbox to filter blog posts and created a Node.js utility (`extract-loom-videos.js`) to generate a comprehensive list of all embedded Loom videos for easier management and batch downloading.
+*   Improved User Experience. Unified the global header for consistency across all pages and enhanced the Figma embed modal with a "Loading..." state + text-based fallback to handle slow load times.
+
+================================================================================
+
+## Re-recorded Phone Silksong Controller Demo
+**Date:** 2025-10-04
+**Time:** 17:11
+**Source File:** pomo_2025-10-04_171145.md
+
+
+# Re-recorded Phone Silksong Controller Demo
+
+* Updated blog content to use new demo
+* Camera+Voiceover clear now vs prev demo
+* Wrote script for video version of technical deep dive
+
+================================================================================
+
+## (NOT) Solving the Grounding Problem
+**Date:** 2025-10-12
+**Time:** 22:57
+**Source File:** pomo_2025-10-12_235305.md
+
+
+# (NOT) Solving the Grounding Problem
+
+*   Experienced a critical hardware failure where the AD8232 EMG sensor produced a "flatline" signal, outputting unresponsive ADC values around 3530-3600, initially suggesting a broken electrode cable.
+*   Diagnosed the root cause as a "floating ground reference" after observing a slight but reliable signal change when touching a grounded MacBook, which was flooding the amplifier with environmental noise and saturating the signal.
+*   Pivoted the project to an IMU-based gesture controller after final data collection attempts failed due to compounded issues of an unstable ground path and the physical failure of disposable electrode adhesives.
+
+================================================================================
+
+## Deconstructing the 8 Principles of PDP Models
+**Date:** 2025-09-29
+**Time:** 16:00
+**Source File:** pomo_20250929_160035.md
+
+
+# Deconstructing the 8 Principles of PDP Models
+
+*   Systematically deconstructed the 8 core principles of Parallel Distributed Processing (PDP) from foundational cognitive science papers.
+*   Solidified abstract concepts by requesting and co-developing quantified examples, linking theory to concrete formulas like the Sigmoid and Delta Rule.
+*   Iteratively refined the interactive study session's format into a focused, principle-by-principle recap to aid comprehension and retention.
+
+================================================================================
+
+## Finalizing and Publishing Capstone Blog Content
+**Date:** 2025-09-29
+**Time:** 16:46
+**Source File:** pomo_20250929_164604.md
+
+
+# Finalizing and Publishing Capstone Blog Content
+
+*   Published the "Connectionism Revelations" post.
+*   Refactor the website for content scalability. 
+*   Properly cited links in the blog.
+
+================================================================================
+
+## Configuring ESP32 for WiFi and Over-the-Air (OTA) Updates
+**Date:** 2025-10-04
+**Time:** 17:15
+**Source File:** pomo_20251004_164527.md
+
+
+# Configuring ESP32 for WiFi and Over-the-Air (OTA) Updates
+
+*   Wrote and successfully uploaded an initial C++ sketch (`main.cpp`) to an ESP32 board using PlatformIO to establish a basic WiFi connection.
+*   Troubleshot serial communication issues by consulting Google AI Studio, learning to use the PlatformIO Serial Monitor to correctly view `Serial.println` output.
+*   Configured the `platformio.ini` file for wireless Over-the-Air (OTA) updates by setting the `upload_protocol` to `espota` and specifying the board's local IP address.
+
+================================================================================
+
+## ESP32 and EMG Sensor Integration
+**Date:** 2025-10-04
+**Time:** 17:49
+**Source File:** pomo_20251004_171256.md
+
+
+# ESP32 and EMG Sensor Integration
+
+*   Wired the AD8232 EMG sensor to a NodeMCU-32S ESP32 board.
+*   Confirmed the wiring scheme connects the sensor's output to the ESP32's GPIO 34, a dedicated analog-to-digital converter (ADC) pin.
+*   Verified the wireless Over-the-Air (OTA) update functionality works by successfully uploading a test C++ sketch from VS Code with PlatformIO.
+
+================================================================================
+
+## Arm Anatomy and Calibration for EMG Bike Signal Project
+**Date:** 2025-10-04
+**Time:** 18:11
+**Source File:** pomo_20251004_173941.md
+
+
+# Arm Anatomy and Calibration for EMG Bike Signal Project
+
+*   Diagnosed and corrected the AD8232 EMG sensor wiring with Google AI Studio, moving the signal pin to the correct analog-to-digital converter (GPIO 34) and fixing the power rail based on analysis of a breadboard photo.
+*   Planned the software approach for reading sensor data, outlining a calibration process in `main.cpp` to establish distinct "rest" and "flex" values for a simple threshold-based model.
+*   Researched arm muscle anatomy to define a user input strategy, opting for a "toggle" logic using different muscle actions (e.g., open palm vs. bicep flex) to prevent signal ambiguity and user fatigue.
+
+================================================================================
+
+## Rigorous Data Collection Protocol for the EMG Bike Signal
+**Date:** 2025-10-08
+**Time:** 16:11
+**Source File:** pomo_20251008_154254.md
+
+
+# Rigorous Data Collection Protocol for the EMG Bike Signal
+
+*   Defined a clear input gesture by targeting the forearm's extensor muscles (Extensor Digitorum, Extensor Carpi Ulnaris), which provides an unambiguous signal opposite to the flexor muscles used for gripping.
+*   Designed a precise data acquisition experiment, creating a protocol with three timed trials to capture distinct classes for 'baseline', 'signal', and 'noise' gestures.
+*   Automated `data_collector.py` script to run the experiment and researched SENIAM.org for standardized electrode placement, ensuring high-quality signal acquisition.
+
+================================================================================
+
+## Refining the EMG Bike Signal Project with AI-Driven Scientific Rigor
+**Date:** 2025-10-08
+**Time:** 16:38
+**Source File:** pomo_20251008_160811.md
+
+
+# Refining the EMG Bike Signal Project with AI-Driven Scientific Rigor
+
+*   Pivoted from a complex dual-muscle input to a single-sensor design on the Extensor Digitorum to eliminate signal crosstalk and reduce cognitive load, based on a literature-supported analysis (Disselhorst-Klug, Catherine et al.
+Clinical Biomechanics, Volume 24, Issue 3, 225 - 235). 
+*   Co-authored a formal, multi-phase project plan, defining a step-by-step protocol for standardized electrode placement on the muscle belly and a rigorous data acquisition experiment.
+*   Shifted the hardware strategy from a simple LED to hacking a commercial USB-rechargeable bike light for practical, real-world application, while outlining future work to explore 1D CNN models for signal processing.
+
+================================================================================
+
+# EXPORT SUMMARY
+
+- **Total Blog Posts:** 11
+- **Total Pomodoro Sessions:** 32
+- **Export Generated:** 2025-10-30T17:29:23.023Z
+- **Character Count:** 102946
+- **Word Count (approx):** 12952
+
+This comprehensive export contains all published content from Carl Kho's biosensor game controller capstone project.
