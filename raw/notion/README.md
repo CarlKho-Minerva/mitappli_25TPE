@@ -19,3 +19,7 @@ MINI DND w Hyunwoo [https://www.notion.so/cvk-minerva/Car-story-5d9928d5b52c42d7
 Thank you page for dell
 
 [https://www.notion.so/cvk-minerva/Thank-Yous-24d8ffadd3ae80e7aec1ca2c32acbc3d](https://www.notion.so/cvk-minerva/Thank-Yous-24d8ffadd3ae80e7aec1ca2c32acbc3d)
+
+[https://www.notion.so/cvk-minerva/61641a43ee9d4c29a8e4c188f83649ab?v=b67c9446c04c4aeaabd183e940875736](https://www.notion.so/cvk-minerva/61641a43ee9d4c29a8e4c188f83649ab?v=b67c9446c04c4aeaabd183e940875736)
+
+https://www.notion.so/cvk-minerva/4421dd92a70a4f73811d8f9bc4598fb4?v=83962ad0a4b74191b02139b49da0a7e7
